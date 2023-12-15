@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Menu from "./src/components/menu";
+import PontoSeguidor from "./src/components/cursor";
 
 
 export const metadata: Metadata = {
@@ -14,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br" className="bg-white ">
+    <html lang="pt-br" className="bg-white relative">
       <body className="m-1 rounded-3xl min-h-[100svh]">
-        
+        <PontoSeguidor />
         <Menu></Menu>
         {children}
       </body>

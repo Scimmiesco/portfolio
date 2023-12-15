@@ -14,7 +14,7 @@ export default function Menu() {
     },
     {
       id: 3,
-      nome: "image",
+      nome: "code",
       rotulo: "Projetos",
     },
     {
@@ -24,19 +24,26 @@ export default function Menu() {
     },
   ];
   return (
-    <section className="p-2 w-full h-auto  bg-white">
-      <nav className="w-2/3 m-auto">
-        <ul className="flex flex-row gap-1 items-center">
+    <section className="flex flex-row w-full h-fit z-48 fixed px-8">
+      <nav className="flex flex-row flex-1">
+        <ul className="flex flex-row gap-1 m-auto w-2/3 items-center">
           {itensMenu.map((item) => (
-            <li className="hover:bg-dark group cursor-pointer transition-all delay-100 ease-in-out bg-white border-2 border-dark flex flex-row justify-around items-center  flex-1 rounded-md first:rounded-l-3xl last:rounded-r-3xl p-1">
-              <span className="group-hover:text-white material-symbols-rounded m-1 items-center text-dark">
+            <li key={item.id} className="hover:bg-dark group transition-colors ease-linear duration-300 bg-white border-2 border-dark flex flex-row justify-around items-center  flex-1 rounded-md first:rounded-l-3xl last:rounded-r-3xl p-1">
+              <span className="delay-200 duration-100 text-3xl group-hover:text-white material-symbols-rounded m-1 items-center text-dark">
                 {item.nome}
               </span>
-              <p className="group-hover:text-white text-center m-auto text-dark">
+              <p className="group-hover:text-white text-2xl delay-200 duration-100 text-center m-auto text-dark">
                 {item.rotulo}
               </p>
             </li>
           ))}
+        </ul>
+        <ul className="my-auto">
+          <li className="w-12 h-12 hover:bg-dark group transition-colors ease-linear duration-300 bg-white border-2 border-dark flex flex-row items-center rounded-full  p-1">
+            <span className="delay-200 duration-100 text-3xl group-hover:text-white material-symbols-rounded m-1 items-center text-dark">
+              light_mode
+            </span>
+          </li>
         </ul>
       </nav>
     </section>
