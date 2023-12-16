@@ -10,13 +10,25 @@ export default function Projetos() {
         </span>
         <h2 className="text-white text-center text-5xl">PROJETOS</h2>
       </div>
-      <div className="flex justify-end row-span-1 col-span-4 items-end">
-        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 my-auto">
+      <div className="flex place-items-end justify-end row-span-1 col-span-4 items-end">
+        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
+          <span className="material-symbols-rounded text-dark text-center m-auto">
+            info
+          </span>
+        </div>
+        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
           <span className="material-symbols-rounded text-dark text-center m-auto">
             open_in_new
           </span>
         </div>
-        <SwitchTema></SwitchTema>
+        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
+          <span className="material-symbols-rounded text-dark text-center m-auto">
+            folder_data
+          </span>
+        </div>
+        <div className="mx-2 my-auto">
+          <SwitchTema></SwitchTema>
+        </div>
       </div>
       <div className="flex flex-col items-end bg-insted_dark bg-center bg-cover card row-start-3 row-span-8 col-span-5  rounded-3xl"></div>
       <div className="card  bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl"></div>

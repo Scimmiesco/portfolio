@@ -4,7 +4,7 @@ import "./switch_tema.css";
 
 export default function SwitchTema() {
   return (
-    <div className="ml-10 my-auto relative">
+    <div className="relative">
       <input
         type="checkbox"
         id="tema_checkbox"
