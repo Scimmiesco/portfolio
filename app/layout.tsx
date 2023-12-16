@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className="bg-white relative">
-      <body className="m-1 rounded-3xl min-h-[100svh]">
+      <body className="m-1 rounded-3xl min-h-[100svh] dark:bg-dark bg-white">
         <PontoSeguidor />
         <Menu></Menu>
         {children}
