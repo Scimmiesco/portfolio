@@ -7,7 +7,7 @@ const PontoSeguidor = () => {
   useEffect(() => {
     const atualizarPosicao = (event: MouseEvent) => {
       const mouseX = event.clientX;
-      const mouseY = event.clientY;
+      const mouseY = event.clientY + window.scrollY; // Considera o deslocamento vertical da página
       setPosicao({ x: mouseX - 12, y: mouseY - 12 });
     };
 

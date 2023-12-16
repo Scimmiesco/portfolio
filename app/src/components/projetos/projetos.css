@@ -8,6 +8,5 @@
 .card:hover {
   transform: rotate(0) scale(1.02);
   transition: all ease-in-out 0.5s;
-  background-color: rgb(245, 240, 222);
   border: none;
 }

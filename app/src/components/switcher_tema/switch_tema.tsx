@@ -1,3 +1,4 @@
+"use client";
 import "../../../globals.css";
 import "./switch_tema.css";
 
@@ -27,11 +28,5 @@ export default function SwitchTema() {
         </span>
       </label>
     </div>
-
-    // <div className="w-12 h-12 hover:bg-dark group transition-colors ease-linear duration-300 bg-white border-2 border-dark flex flex-row items-center rounded-full  p-1">
-    //   <span className="delay-200 duration-100 text-3xl group-hover:text-white material-symbols-rounded m-1 items-center text-dark">
-    //     dark_mode
-    //   </span>
-    // </div>
   );
 }
