@@ -27,7 +27,7 @@ export default function Projetos() {
           </span>
         </div>
         <div className="mx-2 my-auto">
-          <SwitchTema></SwitchTema>
+          <SwitchTema idPrefix="switch_projeto_1"></SwitchTema>
         </div>
       </div>
       <div className="flex flex-col items-end bg-insted_dark bg-center bg-cover card row-start-3 row-span-8 col-span-5  rounded-3xl"></div>

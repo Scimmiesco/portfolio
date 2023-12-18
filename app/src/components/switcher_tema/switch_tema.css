@@ -1,23 +1,25 @@
-#tema_checkbox:checked+label #light_icon {
+/* Quando o checkbox está marcado */
+[id$="tema_checkbox"]:checked + label [id$="light_icon"] {
   transform: translate(0, 0) rotate(180deg);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out 0.1s;
   opacity: 1;
 }
 
-#tema_checkbox:checked+label #dark_icon {
+[id$="tema_checkbox"]:checked + label [id$="dark_icon"] {
   opacity: 0;
   transform: translate(-40px, 0) rotate(180deg);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out 0.1s;
 }
 
-#tema_checkbox:not(:checked)+label #light_icon {
+/* Quando o checkbox não está marcado */
+[id$="tema_checkbox"]:not(:checked) + label [id$="light_icon"] {
   transform: translate(40px, 0) rotate(-45deg);
   transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out 0.1s;
   opacity: 0;
 }
 
-#tema_checkbox:not(:checked)+label #dark_icon {
+[id$="tema_checkbox"]:not(:checked) + label [id$="dark_icon"] {
   transform: translate(0, 0);
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: transform 0.4s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s;
 }
