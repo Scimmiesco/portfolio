@@ -7,6 +7,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -16,9 +17,9 @@ const config: Config = {
         insted_perfil_dark: "url('/area_perfil_dark.png')",
       },
       colors: {
-        white: "#f5f0de", // Ajuste para a cor branca sem transparência
-        blue: "#0d5958", // Ajuste para uma cor azul sem transparência
-        dark: "#1b090d", // Ajuste para uma cor escura sem transparência
+        white: "#f5f0de",
+        blue: "#0d5958",
+        dark: "#1b090d",
       },
     },
     gridTemplateRows: {

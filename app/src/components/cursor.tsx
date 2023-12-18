@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 
 const PontoSeguidor = () => {
   const [posicao, setPosicao] = useState({ x: 0, y: 0 });
-
+  let widthCursor = 32;
   useEffect(() => {
     const atualizarPosicao = (event: MouseEvent) => {
       const mouseX = event.clientX;
       const mouseY = event.clientY + window.scrollY; // Considera o deslocamento vertical da página
-      setPosicao({ x: mouseX - 12, y: mouseY - 12 });
+      setPosicao({ x: mouseX - widthCursor / 2, y: mouseY - widthCursor / 2 });
     };
 
     document.addEventListener("mousemove", atualizarPosicao);
@@ -25,8 +25,10 @@ const PontoSeguidor = () => {
           style={{
             top: `${posicao.y}px`,
             left: `${posicao.x}px`,
+            width: `${widthCursor}px`,
+            height: `${widthCursor}px`,
           }}
-          className="w-8 h-8 pointer-events-none bg-white mix-blend-difference rounded-full absolute z-50 transition ease-in delay-100"
+          className="pointer-events-none bg-white mix-blend-difference rounded-full absolute z-50 transition ease-in delay-100"
         />
       ) : null}
     </>

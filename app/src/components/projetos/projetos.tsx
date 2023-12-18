@@ -8,7 +8,7 @@ export default function Projetos() {
         <span className="text-white text-center material-symbols-rounded text-8xl leading-1">
           code
         </span>
-        <h2 className="text-white text-center text-5xl">PROJETOS</h2>
+        <h2 className="text-white text-center text-5xl dark:text-red">PROJETOS</h2>
       </div>
       <div className="flex place-items-end justify-end row-span-1 col-span-4 items-end">
         <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
