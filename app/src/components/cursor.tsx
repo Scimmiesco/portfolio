@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const PontoSeguidor = () => {
   const [posicao, setPosicao] = useState({ x: 0, y: 0 });
-  let widthCursor = 32;
+  let widthCursor = 40;
   useEffect(() => {
     const atualizarPosicao = (event: MouseEvent) => {
       const mouseX = event.clientX;
@@ -28,7 +28,7 @@ const PontoSeguidor = () => {
             width: `${widthCursor}px`,
             height: `${widthCursor}px`,
           }}
-          className="pointer-events-none bg-white mix-blend-difference rounded-full absolute z-50 transition ease-in delay-100"
+          className="pointer-events-none bg-white mix-blend-difference rounded-full absolute z-50"
         />
       ) : null}
     </>

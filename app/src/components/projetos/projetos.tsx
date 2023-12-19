@@ -2,31 +2,39 @@ import SwitchTema from "../switcher_tema/switch_tema";
 import "./projetos.css";
 
 export default function Projetos() {
+
+  var itensMenuProjeto = [
+    {
+      id: 1,
+      nome: "info",
+    },
+    {
+      id: 2,
+      nome: "open_in_new",
+    },
+    {
+      id: 3,
+      nome: "folder_data",
+    },
+  ];
+
   return (
-    <section className="grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center bg-dark">
+    <section className="dark:bg-dark bg-white grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center">
       <div className="flex justify-center flex-row items-center row-span-2 col-span-5">
-        <span className="text-white text-center material-symbols-rounded text-8xl leading-1">
+        <span className="text-dark dark:text-white text-center material-symbols-rounded text-8xl leading-1">
           code
         </span>
-        <h2 className="text-white text-center text-5xl dark:text-red">PROJETOS</h2>
+        <h2 className="text-dark text-center text-5xl dark:text-white">PROJETOS</h2>
       </div>
       <div className="flex place-items-end justify-end row-span-1 col-span-4 items-end">
-        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
-          <span className="material-symbols-rounded text-dark text-center m-auto">
-            info
-          </span>
-        </div>
-        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
-          <span className="material-symbols-rounded text-dark text-center m-auto">
-            open_in_new
-          </span>
-        </div>
-        <div className="w-10 h-10 bg-white border-2 border-dark rounded-full flex items-center p-1 mx-2 my-auto">
-          <span className="material-symbols-rounded text-dark text-center m-auto">
-            folder_data
-          </span>
-        </div>
-        <div className="mx-2 my-auto">
+        {itensMenuProjeto.map((item) => (
+          <li key={item.id}
+            className="w-10 h-10 bg-white dark:bg-dark border-2 dark:border-white border-dark rounded-full flex items-center p-1 mx-2 my-auto">
+            <span className="material-symbols-rounded text-dark dark:text-white text-center m-auto">
+              {item.nome}
+            </span></li>
+        ))}
+        <div className="my-auto">
           <SwitchTema idPrefix="switch_projeto_1"></SwitchTema>
         </div>
       </div>

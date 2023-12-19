@@ -17,15 +17,12 @@ export default function RootLayout({
 }) {
 
 
-  const tema = new Cookies().get("tema")
-  console.log(tema)
-
   return (
-    <html lang="pt-br" className={tema?.value}>
-      <body className="m-1 rounded-3xl min-h-[100svh] dark:bg-dark bg-white relative">
-          <PontoSeguidor />
-          <Menu></Menu>
-          {children}
+    <html lang="pt-br">
+      <body className="m-1 rounded-3xl min-h-[100svh] dark:bg-white bg-dark relative">
+        <PontoSeguidor />
+        <Menu></Menu>
+        {children}
       </body>
     </html>
   );

@@ -17,9 +17,9 @@ const config: Config = {
         insted_perfil_dark: "url('/area_perfil_dark.png')",
       },
       colors: {
-        white: "#f5f0de",
+        white: "#f5f2de",
         blue: "#0d5958",
-        dark: "#1b090d",
+        dark: "#110109",
       },
     },
     gridTemplateRows: {
