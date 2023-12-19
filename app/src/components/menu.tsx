@@ -5,7 +5,6 @@ import SwitchTema from "./switcher_tema/switch_tema";
 import useDarkMode from "./toogle_tema";
 
 export default function Menu() {
-  // Define menu items
   var itensMenu = [
     {
       id: 1,
@@ -56,7 +55,7 @@ export default function Menu() {
         <ul className="my-auto">
           <li>
             <SwitchTema
-              onToggle={handleDarkModeToggle} idPrefix="switch_menu"></SwitchTema>
+              onToggle={handleDarkModeToggle} temalocalStorage={tema} idPrefix="switch_menu"></SwitchTema>
           </li>
         </ul>
       </nav>

@@ -4,14 +4,17 @@ import { useEffect, useState } from "react";
 import "../../../globals.css";
 import "./switch_tema.css";
 
-export default function SwitchTema({ idPrefix = "", onToggle }: any) {
+export default function SwitchTema({ idPrefix = "", onToggle, temalocalStorage }: any) {
+ 
   const temaCheckboxId = `${idPrefix}tema_checkbox`;
 
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(temalocalStorage === 'light' ? true : false);
+
+ console.log("temaLocalStorage", temalocalStorage)
 
   const handleToggle = () => {
     const isCheckedToogle = !isChecked;
-    setIsChecked(isCheckedToogle); 
+    setIsChecked(isCheckedToogle);
     onToggle(isCheckedToogle)
   };
 

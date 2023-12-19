@@ -2,9 +2,10 @@
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
 
 function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
-    const [tema, setTema] = useState<string>(
-        typeof window !== "undefined" ? localStorage.getItem("tema") || "dark" : "dark"
-    );
+
+    const temaInicial = typeof window !== "undefined" ? localStorage.getItem("tema") || "dark" : "dark";
+
+    const [tema, setTema] = useState<string>(temaInicial);
 
 
     useEffect(() => {
