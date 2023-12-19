@@ -1,7 +1,11 @@
+'use client'
+import React from "react";
 import "../../globals.css";
 import SwitchTema from "./switcher_tema/switch_tema";
+import useDarkMode from "./toogle_tema";
 
 export default function Menu() {
+  // Define menu items
   var itensMenu = [
     {
       id: 1,
@@ -24,6 +28,16 @@ export default function Menu() {
       rotulo: "Fala comigo",
     },
   ];
+
+  // Use useDarkMode hook to manage dark mode state
+  const [corTema, setTema] = useDarkMode();
+
+  // Handle dark mode toggle
+  const handleDarkModeToggle = () => {
+    // Toggle between "light" and "dark"
+    setTema(corTema === "dark" ? "light" : "dark");
+  };
+
   return (
     <section className="flex justify-center flex-row w-full h-fit z-40 fixed px-8">
       <nav className="flex flex-row justify-center gap-4 w-full">
@@ -43,7 +57,7 @@ export default function Menu() {
           ))}
         </ul>
         <ul className="my-auto">
-          <li >
+          <li onClick={handleDarkModeToggle}>
             <SwitchTema idPrefix="switch_menu"></SwitchTema>
           </li>
         </ul>

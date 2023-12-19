@@ -18,11 +18,11 @@ export default function RootLayout({
 }) {
 
 
-  const theme = new Cookies().get("tema")
-  console.log(theme.value)
+  const tema = new Cookies().get("tema")
+  console.log(tema)
 
   return (
-    <html suppressHydrationWarning lang="pt-br" className={theme?.value}>
+    <html suppressHydrationWarning lang="pt-br" className={tema?.value}>
       <body className="m-1 rounded-3xl min-h-[100svh] dark:bg-dark bg-white relative">
         <Providers>
           <PontoSeguidor />

@@ -1,35 +1,25 @@
-// components/client/theme-swither.tsx
-"use client"
+'use client'
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 
-interface Props {
-    theme: Theme
+function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
+    const [tema, setTema] = useState<string>(
+        typeof window !== "undefined" ? localStorage.getItem("tema") || "dark" : "dark"
+    );
+
+    const corTema = tema === "dark" ? "dark" : "dark";
+
+    useEffect(() => {
+        const root = window.document.documentElement;
+
+        root.classList.remove(corTema);
+        root.classList.add(corTema);
+
+        if (typeof window !== "undefined") {
+            localStorage.setItem("tema", corTema);
+        }
+    }, [corTema]);
+
+    return [corTema, setTema];
 }
 
-export const ThemeSwitcher: FC<Props> = ({ theme }) => {
-
-    const [_theme, setTheme] = useState<Theme>(theme)
-
-    const toogleTheme = () => {
-
-        const root = document.getElementsByTagName('html')[0]
-        root.classList.toggle(Theme.dark)
-        if (root.classList.contains(Theme.dark)) {
-            setTheme(Theme.dark)
-            document.cookie = `theme=${Theme.dark}`
-        } else {
-            setTheme(Theme.light)
-            document.cookie = `theme=${Theme.light}`
-        }
-
-    }
-
-    return (
-        <button onClick={toogleTheme}>
-            {
-                _theme == Theme.dark ?
-                    <SunIcon className="h-10 w-10 text-yellow-500" />
-                    :
-                    <MoonIcon className="h-10 w-10" />
-            }
-        </button>
-    )}
+export default useDarkMode;
