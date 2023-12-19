@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
 import "../../globals.css";
 import SwitchTema from "./switcher_tema/switch_tema";
 import useDarkMode from "./toogle_tema";
@@ -29,13 +29,10 @@ export default function Menu() {
     },
   ];
 
-  // Use useDarkMode hook to manage dark mode state
-  const [corTema, setTema] = useDarkMode();
+  const [tema, setTema] = useDarkMode();
 
-  // Handle dark mode toggle
-  const handleDarkModeToggle = () => {
-    // Toggle between "light" and "dark"
-    setTema(corTema === "dark" ? "light" : "dark");
+  const handleDarkModeToggle = (isChecked: boolean) => {
+    setTema(isChecked ? "light" : "dark");
   };
 
   return (
@@ -57,8 +54,9 @@ export default function Menu() {
           ))}
         </ul>
         <ul className="my-auto">
-          <li onClick={handleDarkModeToggle}>
-            <SwitchTema idPrefix="switch_menu"></SwitchTema>
+          <li>
+            <SwitchTema
+              onToggle={handleDarkModeToggle} idPrefix="switch_menu"></SwitchTema>
           </li>
         </ul>
       </nav>

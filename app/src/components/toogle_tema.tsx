@@ -6,20 +6,20 @@ function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
         typeof window !== "undefined" ? localStorage.getItem("tema") || "dark" : "dark"
     );
 
-    const corTema = tema === "dark" ? "dark" : "dark";
 
     useEffect(() => {
         const root = window.document.documentElement;
 
-        root.classList.remove(corTema);
-        root.classList.add(corTema);
+        const classTemaRemover = tema === 'dark' ? 'light' : "dark" as string;
+        root.classList.remove(classTemaRemover);
+        root.classList.add(tema);
 
         if (typeof window !== "undefined") {
-            localStorage.setItem("tema", corTema);
+            localStorage.setItem("tema", tema);
         }
-    }, [corTema]);
+    }, [tema]);
 
-    return [corTema, setTema];
+    return [tema, setTema];
 }
 
 export default useDarkMode;

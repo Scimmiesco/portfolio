@@ -1,16 +1,28 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import "../../../globals.css";
 import "./switch_tema.css";
 
-export default function SwitchTema({ idPrefix = "" }) {
+export default function SwitchTema({ idPrefix = "", onToggle }: any) {
   const temaCheckboxId = `${idPrefix}tema_checkbox`;
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleToggle = () => {
+    const isCheckedToogle = !isChecked;
+    setIsChecked(isCheckedToogle); 
+    onToggle(isCheckedToogle)
+  };
 
   return (
     <div className="relative">
       <input
         type="checkbox"
         id={temaCheckboxId}
-        className="opacity-0 cursor-none absolute w-10 h-10 "
+        className="opacity-1 cursor-none absolute w-10 h-10 "
+        checked={isChecked}
+        onChange={handleToggle}
       />
       <label
         htmlFor={temaCheckboxId}
