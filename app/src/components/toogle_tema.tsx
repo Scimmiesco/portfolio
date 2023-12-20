@@ -1,24 +1,24 @@
-'use client'
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
 
 function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
+    const isBrowser = typeof window !== "undefined";
 
-    const temaInicial = typeof window !== "undefined" ?  localStorage.getItem("tema") || "dark": "dark";
-
-    const [tema, setTema] = useState<string>(temaInicial);
-
+    const [tema, setTema] = useState<string>(
+        localStorage.getItem("tema") || "dark"
+    );
 
     useEffect(() => {
-        const root = window.document.documentElement;
+        if (isBrowser) {
+            const corTema = tema === "dark" ? "dark" : "light"; // Atualizado conforme necessário
 
-        const classTemaRemover = tema === 'dark' ? 'light' : "dark" as string;
-        root.classList.remove(classTemaRemover);
-        root.classList.add(tema);
+            const root = window.document.documentElement;
 
-        if (typeof window !== "undefined") {
-            localStorage.setItem("tema", tema);
+            root.classList.remove("dark", "light");
+            root.classList.add(corTema);
+
+            localStorage.setItem("tema", corTema);
         }
-    }, [tema]);
+    }, [isBrowser, tema]); // Use isBrowser e tema como dependências
 
     return [tema, setTema];
 }
