@@ -3,18 +3,14 @@ import { useEffect, useState, Dispatch, SetStateAction } from "react";
 function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
     const isBrowser = typeof window !== "undefined";
 
-    const [tema, setTema] = useState<string>("dark");
+    const [tema, setTema] = useState<string>(
+        localStorage.getItem("tema") || "dark"
+    );
 
     useEffect(() => {
         if (isBrowser) {
-            const savedTema = localStorage.getItem("tema");
-            setTema(savedTema || "dark");
-        }
-    }, [isBrowser]);
+            const corTema = tema === "dark" ? "dark" : "light"; // Atualizado conforme necessário
 
-    useEffect(() => {
-        if (isBrowser) {
-            const corTema = tema === "dark" ? "dark" : "light";
             const root = window.document.documentElement;
 
             root.classList.remove("dark", "light");
@@ -22,7 +18,7 @@ function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
 
             localStorage.setItem("tema", corTema);
         }
-    }, [isBrowser, tema]);
+    }, [isBrowser, tema]); // Use isBrowser e tema como dependências
 
     return [tema, setTema];
 }
