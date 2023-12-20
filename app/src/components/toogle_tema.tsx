@@ -1,9 +1,10 @@
 
-'use client';
+"use client"
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
+import { getCookie, setCookie } from 'cookies-next';
+function useDarkMode(temaProp: string): [string, Dispatch<SetStateAction<string>>] {
 
-function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
-    const [tema, setTema] = useState<string>(localStorage.getItem("tema") || "dark");
+    const [tema, setTema] = useState<string>(temaProp);
 
     useEffect(() => {
         const corTema = tema === "dark" ? "dark" : "light";
@@ -13,7 +14,7 @@ function useDarkMode(): [string, Dispatch<SetStateAction<string>>] {
         root.classList.remove("dark", "light");
         root.classList.add(corTema);
 
-        localStorage.setItem('tema', tema);
+        setCookie("tema", tema)
 
     }, [tema]);
 

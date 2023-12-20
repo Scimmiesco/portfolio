@@ -1,10 +1,10 @@
 'use client'
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "../../globals.css";
 import SwitchTema from "./switcher_tema/switch_tema";
 import useDarkMode from "./toogle_tema";
 
-export default function Menu() {
+export default function Menu({ temaCookie }: any) {
   var itensMenu = [
     {
       id: 1,
@@ -27,8 +27,7 @@ export default function Menu() {
       rotulo: "Fala comigo",
     },
   ];
-
-  const [tema, setTema] = useDarkMode();
+  const [tema, setTema] = useDarkMode(temaCookie);
 
   const handleDarkModeToggle = (isChecked: boolean) => {
     setTema(isChecked ? "light" : "dark");
@@ -55,7 +54,7 @@ export default function Menu() {
         <ul className="my-auto">
           <li>
             <SwitchTema
-              onToggle={handleDarkModeToggle} temalocalStorage={tema} idPrefix="switch_menu"></SwitchTema>
+              onToggle={handleDarkModeToggle} temalocalStorage={temaCookie} idPrefix="switch_menu"></SwitchTema>
           </li>
         </ul>
       </nav>

@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import "../../../globals.css";
 import "./switch_tema.css";
-
+import { getCookie, setCookie } from 'cookies-next';
 export default function SwitchTema({ idPrefix = "", onToggle, temalocalStorage }: any) {
 
   const temaCheckboxId = `${idPrefix}tema_checkbox`;
-
+  
   const [isChecked, setIsChecked] = useState(temalocalStorage === 'light' ? true : false);
 
 
