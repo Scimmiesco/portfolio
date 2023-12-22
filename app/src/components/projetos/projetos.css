@@ -1,8 +1,9 @@
 @import "../../../globals.css";
 
 .card {
-  transition: all ease-in-out 0.5s;
-
+  transition: all ease-in-out 0.7s;
+  background-position: center;
+  background-size: cover;
 }
 
 .card:hover {

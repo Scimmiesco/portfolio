@@ -14,12 +14,14 @@ const config: Config = {
         insted_light: "url('/area_insted_light.png')",
         insted_dark: "url('/area_insted_dark.png')",
         insted_home_dark: "url('/area_home_dark.png')",
+        insted_home_light: "url('/area_home_light.png')",
         insted_perfil_dark: "url('/area_perfil_dark.png')",
+        insted_perfil_light: "url('/area_perfil_light.png')",
       },
       colors: {
-        white: "#f5f2de",
-        blue: "#0d5958",
-        dark: "#110109",
+        white: "#f7f3d8",
+        dark: "#011616",
+        teste: "#110109",
       },
     },
     gridTemplateRows: {

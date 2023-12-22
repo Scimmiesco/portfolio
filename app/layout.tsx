@@ -4,6 +4,7 @@ import Menu from "./src/components/menu";
 import PontoSeguidor from "./src/components/cursor";
 import { getCookie } from "cookies-next";
 import { cookies } from 'next/headers'
+
 export const metadata: Metadata = {
   title: "Pedro Almeida",
   description: "Meu portfólio",
@@ -15,11 +16,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-const temaCookie = cookies().get("tema")?.value as string; 
+  const temaCookie = cookies().get("tema")?.value || "light" as string;
 
   return (
     <html lang="pt-br">
-      <body className="m-1 rounded-3xl min-h-[100svh] dark:bg-white bg-dark relative">
+      <header>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet" />
+      </header>
+      <body className="flex flex-col justify-start rounded-3xl min-h-[100svh] dark:bg-dark bg-dark relative">
         <PontoSeguidor />
         <Menu temaCookie={temaCookie}></Menu>
         {children}
