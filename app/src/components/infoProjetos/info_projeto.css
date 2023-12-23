@@ -2,10 +2,6 @@
 }
 
 .modal {
-  transition: display 0.15s ease-out, width 0.25s linear,
-    height 0.5s ease-in-out;
-}
-
-.nav {
-  transition: display 0.75 linear fowards;
+  transition: opacity 0.15s ease-in, width 0.25s ease-in,
+    height 0.25s ease-in 0.25s;
 }
