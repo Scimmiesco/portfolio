@@ -18,6 +18,12 @@ export default function Menu({ temaCookie }: any) {
   const handleDarkModeToggle = (isChecked: boolean) => {
     setTema(isChecked ? "light" : "dark");
   };
+  const voltaProTopo = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
   return (
     <section className="flex justify-center flex-row w-full h-fit z-40 fixed px-8 py-2">
@@ -31,12 +37,12 @@ export default function Menu({ temaCookie }: any) {
           {itensMenu.map((item) => (
             <li
               key={item.id}
+              onClick={voltaProTopo}
               className="bg-white dark:border-white hover:bg-dark dark:bg-dark dark:hover:bg-white px-8 group transition-colors ease-linear duration-300  border-2 border-dark flex flex-row justify-around items-center flex-1 first:rounded-l-3xl last:rounded-r-3xl rounded-md"
             >
               <span className="text-dark dark:text-white group-hover:text-white dark:group-hover:text-dark delay-200 text-3xl  material-symbols-rounded m-1 items-center ">
                 {item.nome}
               </span>
-
             </li>
           ))}
         </ul>

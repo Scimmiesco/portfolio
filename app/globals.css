@@ -45,6 +45,7 @@ html {
   user-select: none;
   cursor: none;
   color: "#011616";
+  scroll-behavior: smooth;
 
   h1,
   h2 {

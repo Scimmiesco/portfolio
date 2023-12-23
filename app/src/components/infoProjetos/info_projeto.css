@@ -1,0 +1,10 @@
+.infoSection {}
+
+.modal {
+  transition: opacity 0.15s ease-out, width 0.25s linear, height 0.5s ease-in-out;
+
+}
+
+.nav {
+  transition: opacity 0.75 linear fowards; 
+}

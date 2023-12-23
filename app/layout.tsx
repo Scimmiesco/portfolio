@@ -26,7 +26,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet" />
       </header>
-      <body className="flex flex-col justify-start rounded-3xl min-h-[100svh] dark:bg-dark bg-dark relative">
+      <body className="flex flex-col justify-start rounded-3xl min-h-[100svh] dark:bg-dark bg-dark relative overflow-x-hidden">
         <PontoSeguidor />
         <Menu temaCookie={temaCookie}></Menu>
         {children}
