@@ -1,7 +1,30 @@
-.infoSection {
+.modal {
+  transition: opacity 0.05s ease-in, width 0.15s ease-in,
+    height 0.15s ease-in 0.15s;
 }
 
-.modal {
-  transition: opacity 0.15s ease-in, width 0.25s ease-in,
-    height 0.25s ease-in 0.25s;
+
+.nav ul li a {
+  display: block;
+}
+
+.nav ul li a p {
+  display: inline-block;
+  position: relative;
+}
+
+.nav ul li a p::after {
+  content: 'north_east';
+  font-family: "Material Symbols Rounded";
+  position: absolute;
+  right: -1rem;
+  top: -25%;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+}
+
+.nav ul li a p:hover::after {
+
+  opacity: 1;
 }

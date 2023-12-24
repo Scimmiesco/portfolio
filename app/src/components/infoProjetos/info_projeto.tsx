@@ -1,12 +1,12 @@
 "use client";
 import "./info_projeto.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function InfoProjetos() {
-  const [modalFechado, setModalAberto] = useState<boolean>(true);
+  const [modalFechado, setModalFechado] = useState<boolean>(true);
 
   const toogleModalAberto = () => {
-    setModalAberto(!modalFechado);
+    setModalFechado(!modalFechado);
   };
 
   return (
@@ -22,20 +22,19 @@ export default function InfoProjetos() {
 
       <div
         id="modal"
-        className={` ${
-          modalFechado ? " opacity-0 h-0 w-0" : " opacity-95 w-64 h-96 "
-        } modal absolute bg-white border-2 border-dark  white top-0 right-10 z-40 rounded-3xl m-2 shadow-sm shadow-dark`}
+        className={`${modalFechado
+          ? "opacity-0 h-0 w-0 transition-none"
+          : "opacity-95 w-64 h-96 transition-opacity duration-150 linear"
+          } modal absolute bg-white border-2 border-dark white top-0 right-10 z-40 rounded-3xl m-2 shadow-sm shadow-dark`}
       >
         <div
-          className="nav
-        transition-opacity duration-150 linear delay-150"
+          className=""
         >
           <div className="">
             <h3
               className={`'
-         ${modalFechado ? " opacity-0" : "opacity-1 "}
+         ${modalFechado ? " opacity-0 transition-none" : "opacity-1 "}
          text-dark text-center text-2xl p-2 
-         transition-opacity duration-150 linear delay-300
          '
          `}
             >
@@ -43,18 +42,24 @@ export default function InfoProjetos() {
             </h3>
           </div>
           <nav
-            className={`'
-         ${modalFechado ? " opacity-0" : "opacity-1 "} nav  
-         transition-opacity duration-150 linear delay-500
+          id="navModal"
+            className={`' nav
+         ${modalFechado ? " opacity-0" : "opacity-1 "} 
          '`}
           >
             <ul className={`' ${modalFechado ? " opacity-0" : "opacity-1"} ' `}>
               <li>
                 <h4 className="text-xl p-1">Framework</h4>
-                <p className="px-3">Angular 15.2</p>
+                <li>
+                  <a>
+                    <p className="px-3">Angular 15.2</p>
+                  </a>
+                </li>
               </li>
               <li>
-                <h4 className="text-xl p-1">Bibliotecas</h4>
+                <li>
+                  <h4 className="text-xl p-1">Bibliotecas</h4>
+                </li>
                 <a
                   className=""
                   href="https://v15.material.angular.io/"
