@@ -35,14 +35,16 @@ export default function Projetos() {
         </h2>
       </div>
       <div className="flex place-items-end justify-end row-span-1 col-span-4 items-end gap-2 my-auto">
+
         <InfoProjetos></InfoProjetos>
+
         {linkMenuProjeto.map((item) => (
           <a target="_blank" href={item.link} className="my-auto cursor-none">
             <div
               key={item.id}
               className=" w-10 h-10 bg-white dark:bg-dark border-2 dark:border-white border-dark rounded-full flex items-center p-1"
             >
-              <span className="material-symbols-rounded text-dark dark:text-white text-center m-auto">
+              <span className=" material-symbols-rounded text-dark dark:text-white text-center m-auto">
                 {item.nome}
               </span>
             </div>
@@ -56,23 +58,20 @@ export default function Projetos() {
         </div>
       </div>
       <div
-        className={`${
-          projetoClaro ? "bg-insted_light brightness-90" : "bg-insted_dark"
-        } bg-center bg-cover card um flex flex-col items-end  row-start-3 row-span-8 col-span-5 rounded-3xl`}
+        className={`${projetoClaro ? "bg-insted_light brightness-90" : "bg-insted_dark"
+          } bg-center bg-cover card um flex flex-col items-end  row-start-3 row-span-8 col-span-5 rounded-3xl`}
       ></div>
       <div
-        className={`${
-          projetoClaro
+        className={`${projetoClaro
             ? "bg-insted_home_light brightness-90"
             : "bg-insted_home_dark"
-        } card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
+          } card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
       ></div>
       <div
-        className={`${
-          projetoClaro
+        className={`${projetoClaro
             ? "bg-insted_perfil_light brightness-90"
             : "bg-insted_perfil_dark"
-        } card tres bg-insted_perfil_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
+          } card tres bg-insted_perfil_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
       ></div>
       <div className="grid col-span-9">
         <p
