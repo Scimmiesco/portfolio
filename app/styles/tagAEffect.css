@@ -1,0 +1,23 @@
+.linkSeta {
+  display: block;
+}
+
+.linkSeta p {
+  display: inline-block;
+  position: relative;
+}
+
+.linkSeta p::after {
+  content: "north_east";
+  font-family: "Material Symbols Rounded";
+  position: absolute;
+  right: -1rem;
+  top: -25%;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+}
+
+.linkSeta p:hover::after {
+  opacity: 1;
+}
