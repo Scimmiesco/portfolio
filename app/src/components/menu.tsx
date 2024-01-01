@@ -30,6 +30,7 @@ export default function Menu({ temaCookie }: any) {
       <nav className="flex flex-row justify-center gap-4 w-full"> <ul className="my-auto">
         <li>
           <SwitchTema
+          
             onToggle={handleDarkModeToggle} temalocalStorage={temaCookie} idPrefix="switch_menu"></SwitchTema>
         </li>
       </ul>
