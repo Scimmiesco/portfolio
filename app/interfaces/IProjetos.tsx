@@ -16,13 +16,20 @@ interface Image {
   alt: string;
 }
 
+interface resume {
+  idProjeto: number,
+  resume: string
+}
 interface Project {
   id: number;
-  title: string;
-  frameworks: { items: Framework[] };
-  libraries: { items: Library[] };
+  modalInfo: {
+    title: string;
+    frameworks: { items: Framework[] };
+    libraries: { items: Library[] };
+  }
   images: { default: Image[]; dark?: Image[] };
-}[]
+  resume: { id: number, resume: string };
+}
 
 interface ProjetoCardProps {
   projeto: Project;

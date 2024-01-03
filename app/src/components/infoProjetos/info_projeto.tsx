@@ -1,7 +1,7 @@
 "use client";
 import "./info_projeto.css";
 import "../../../styles/tagAEffect.css";
-import "../../../interfaces/Iprojetos";
+import "../../../interfaces/IProjetos"
 import { useEffect, useState } from "react";
 
 export default function InfoProjetos({ projeto }: { projeto: Project }) {
@@ -58,7 +58,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                 className={`${modalFechado ? "opacity-0 transition-none" : "opacity-1"
                   } text-dark dark:text-white text-center text-2xl p-2`}
               >
-                {projeto.title}
+                {projeto.modalInfo.title}
               </h3>
             </div>
             <nav
@@ -72,7 +72,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                   <h4 className="text-xl p-1">
                     Framework
                   </h4>
-                  {projeto.frameworks.items.map((item, index) => (
+                  {projeto.modalInfo.frameworks.items.map((item, index) => (
                     <li key={index}>
                       <a className="linkSeta" href={item.link}>
                         <p className="px-3">{item.name}</p>
@@ -84,7 +84,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                   <h4 className="text-xl p-1">
                     Bibliotecas
                   </h4>
-                  {projeto.libraries.items.map((item, index) => (
+                  {projeto.modalInfo.libraries.items.map((item, index) => (
                     <li key={index}>
                       <a className="linkSeta" href={item.link} target="_blank">
                         <p className="px-3">{item.name}</p>

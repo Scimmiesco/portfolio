@@ -4,8 +4,6 @@ import SwitchTema from "../switcher_tema/switch_tema";
 import "./projetos.css";
 import InfoProjetos from "../infoProjetos/info_projeto";
 import { FiraCode } from "@/app/ui/fonts";
-import Image from "next/image";
-import { clearScreenDown } from "readline";
 export default function Projetos() {
   var linkMenuProjeto = [
     {
@@ -19,21 +17,23 @@ export default function Projetos() {
       link: "https://github.com/Scimmiesco/portfolio",
     },
   ];
-  const projetos = [
+  const projetos: Project[] = [
     {
       id: 1,
-      title: "Área Insted",
-      frameworks: {
-        items: [{ id: 1, name: "Angular 15.2", link: "https://angular.io/" }],
-      },
-      libraries: {
-        items: [
-          { id: 1, name: "Angular Material", link: "https://v15.material.angular.io/" },
-          { id: 2, name: "SwiperJS", link: "https://swiperjs.com/swiper-api" },
-          { id: 3, name: "Crypto-Js", link: "https://www.npmjs.com/package/crypto-js" },
-          { id: 4, name: "JWT-Decode", link: "https://www.npmjs.com/package/jwt-decode" },
-          { id: 5, name: "Ngrx-Store", link: "https://ngrx.io/guide/store" },
-        ],
+      modalInfo: {
+        title: "Área Insted",
+        frameworks: {
+          items: [{ id: 1, name: "Angular 15.2", link: "https://angular.io/" }],
+        },
+        libraries: {
+          items: [
+            { id: 1, name: "Angular Material", link: "https://v15.material.angular.io/" },
+            { id: 2, name: "SwiperJS", link: "https://swiperjs.com/swiper-api" },
+            { id: 3, name: "Crypto-Js", link: "https://www.npmjs.com/package/crypto-js" },
+            { id: 4, name: "JWT-Decode", link: "https://www.npmjs.com/package/jwt-decode" },
+            { id: 5, name: "Ngrx-Store", link: "https://ngrx.io/guide/store" },
+          ],
+        }
       },
       images: {
         default: [
@@ -46,30 +46,12 @@ export default function Projetos() {
           { id: 1, url: 'teste', alt: 'alt' },
           { id: 1, url: 'teste', alt: 'alt' },
         ]
-      }
-    }, {
-      id: 2,
-      title: "teste",
-      frameworks: {
-        items: [{ id: 1, name: "Angular 15.2", link: "https://angular.io/" }],
       },
-      libraries: {
-        items: [
-          { id: 1, name: "teste", link: "https://v15.material.angular.io/" },
-          { id: 2, name: "SwiperJS", link: "https://swiperjs.com/swiper-api" },
-          { id: 3, name: "Crypto-Js", link: "https://www.npmjs.com/package/crypto-js" },
-          { id: 4, name: "JWT-Decode", link: "https://www.npmjs.com/package/jwt-decode" },
-          { id: 5, name: "Ngrx-Store", link: "https://ngrx.io/guide/store" },
-        ],
-      },
-      images: {
-        default: [
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
-        ]
+      resume: {
+        id: 1,
+        resume: ""
       }
-    }
+    },
 
   ]
   const [projetoClaro, setProjetoClaro] = useState<boolean>();
@@ -161,9 +143,7 @@ export default function Projetos() {
         <p
           className={`' ${FiraCode.className} text-2xl text-justify p-2 text-dark dark:text-white '`}
         >
-          Projeto destinado ao conclusão do Projeto Integrador, proposta
-          fornecida pela faculdade Insted, onde seria desenvolvido um software
-          desde o primeiro semestre até sua entrega final.
+          {projetos[indexProjeto].resume}
         </p>
       </div>
     </section>
