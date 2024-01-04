@@ -16,6 +16,11 @@ interface Image {
   alt: string;
 }
 
+interface deployment {
+  id: number,
+  name: string,
+  link: string
+}
 interface resume {
   resume: string
 }
@@ -25,6 +30,7 @@ interface Project {
     title: string;
     frameworks: { items: Framework[] };
     libraries: { items: Library[] };
+    deployments?: { items: deployment[] };
   }
   images: { default: Image[]; dark?: Image[] };
   resume: string
