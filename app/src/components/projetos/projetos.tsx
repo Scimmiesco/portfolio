@@ -40,13 +40,13 @@ export default function Projetos() {
       images: {
         default: [
           { id: 1, url: '/area_insted_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 2, url: '/area_home_light.png', alt: 'alt' },
+          { id: 3, url: '/area_perfil_light.png', alt: 'alt' },
         ],
         dark: [
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_insted_dark.png', alt: 'alt' },
+          { id: 2, url: '/area_home_dark.png', alt: 'alt' },
+          { id: 3, url: '/area_perfil_dark.png', alt: 'alt' },
         ]
       },
       resume: "Projeto destinado ao conclusão do Projeto Integrador, proposta fornecida pela faculdade Insted, onde seria desenvolvido um software desde o primeiro semestre até sua entrega final."
@@ -70,21 +70,16 @@ export default function Projetos() {
       },
       images: {
         default: [
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_insted_light.png', alt: 'alt' },
+          { id: 2, url: '/area_home_light.png', alt: 'alt' },
+          { id: 3, url: '/area_perfil_light.png', alt: 'alt' },
         ],
-        dark: [
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
-        ]
       },
       resume: "teste"
     },
 
   ]
-  const [projetoClaro, setProjetoClaro] = useState<boolean>();
+  const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
 
   const handleDarkModeToggle = (isChecked: boolean) => {
     setProjetoClaro(isChecked);
@@ -100,6 +95,7 @@ export default function Projetos() {
       setIndexProjeto(indexProjeto + 1)
     }
   }
+
   function projetoAnterior() {
 
     if (indexProjeto == 0) {
@@ -134,8 +130,8 @@ export default function Projetos() {
 
         <InfoProjetos projeto={projetos[indexProjeto]}></InfoProjetos>
 
-        {linkMenuProjeto.map((item) => (
-          <a target="_blank" href={item.link} className="my-auto cursor-none">
+        {linkMenuProjeto.map((item, index) => (
+          <a key={index} target="_blank" href={item.link} className="my-auto cursor-none">
             <div
               key={item.id}
               className=" w-10 h-10 bg-white group dark:bg-dark border-2 hover:bg-black  dark:border-white border-dark rounded-full flex items-center p-1"
@@ -146,27 +142,50 @@ export default function Projetos() {
             </div>
           </a>
         ))}
-        <div className="my-auto">
-          <SwitchTema
-            onToggle={handleDarkModeToggle}
-            idPrefix="switch_projeto_1"
-          ></SwitchTema>
-        </div>
+        {projetos[indexProjeto].images.dark != null && (
+          <div className="my-auto">
+            <SwitchTema
+              onToggle={handleDarkModeToggle}
+              iconePadrao={projetoClaro ? 'light' : 'dark'}
+              idPrefix="switch_projeto_1"
+            ></SwitchTema>
+          </div>
+        )}
       </div>
-      <div
-        className={` relative card um items-end row-start-3 row-span-8 col-span-5 `}
-      >
-        <Image src={projetos[indexProjeto].images.default[0].url} fill alt={projetos[indexProjeto].images.default[0].alt} style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}></Image>
-      </div>
-      {projetos[indexProjeto].images.default.map((item, index: number) => (
-        <div
-          className={` relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
-        >
 
-          <Image src={item.url} fill alt={projetos[indexProjeto].images.default[index].alt} style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}></Image>
+      {projetoClaro || projetos[indexProjeto].images.dark == null
+        ? projetos[indexProjeto].images.default.map((item, index: number) => (
+          <div
+            key={index}
+            className={` 
+          ${index === 0 ? 'row-start-3 row-span-8 col-span-5' : ''}
+          relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
+          >
+            <Image
+              src={item.url}
+              fill
+              alt={item.alt}
+              style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}
+            ></Image>
+          </div>
+        ))
+        : projetoClaro == false && projetos[indexProjeto].images.dark != null &&
+        projetos[indexProjeto].images.dark?.map((item, index: number) => (
+          <div
+            key={index}
+            className={` 
+          ${index === 0 ? 'row-start-3 row-span-8 col-span-5' : ''}
+          relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
+          >
+            <Image
+              src={item.url}
+              fill
+              alt={item.alt}
+              style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}
+            ></Image>
+          </div>
+        ))}
 
-        </div>
-      ))}
 
 
       <div className="grid col-span-9">

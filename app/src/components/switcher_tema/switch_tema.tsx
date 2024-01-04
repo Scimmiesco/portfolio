@@ -3,11 +3,13 @@
 import { useState } from "react";
 import "../../../globals.css";
 import "./switch_tema.css";
-export default function SwitchTema({ idPrefix = "", onToggle, temalocalStorage }: any) {
+export default function SwitchTema({ idPrefix = "", onToggle, iconePadrao }: any) {
 
   const temaCheckboxId = `${idPrefix}tema_checkbox`;
 
-  const [isChecked, setIsChecked] = useState(temalocalStorage === 'light' ? true : false);
+  const [isChecked, setIsChecked] = useState(
+    iconePadrao === 'light' ? true
+      : iconePadrao === 'dark' ? false : true);
 
 
   const handleToggle = () => {
@@ -17,7 +19,7 @@ export default function SwitchTema({ idPrefix = "", onToggle, temalocalStorage }
   };
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <input
         type="checkbox"
         id={temaCheckboxId}
