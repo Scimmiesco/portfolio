@@ -17,7 +17,6 @@ interface Image {
 }
 
 interface resume {
-  idProjeto: number,
   resume: string
 }
 interface Project {
@@ -28,8 +27,9 @@ interface Project {
     libraries: { items: Library[] };
   }
   images: { default: Image[]; dark?: Image[] };
-  resume: { id: number, resume: string };
-}
+  resume: string
+};
+
 
 interface ProjetoCardProps {
   projeto: Project;

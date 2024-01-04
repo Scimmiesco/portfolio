@@ -4,6 +4,8 @@ import SwitchTema from "../switcher_tema/switch_tema";
 import "./projetos.css";
 import InfoProjetos from "../infoProjetos/info_projeto";
 import { FiraCode } from "@/app/ui/fonts";
+import Image from 'next/image'
+
 export default function Projetos() {
   var linkMenuProjeto = [
     {
@@ -37,20 +39,48 @@ export default function Projetos() {
       },
       images: {
         default: [
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
+          { id: 1, url: '/area_insted_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
         ],
         dark: [
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
-          { id: 1, url: 'teste', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
         ]
       },
-      resume: {
-        id: 1,
-        resume: ""
-      }
+      resume: "Projeto destinado ao conclusão do Projeto Integrador, proposta fornecida pela faculdade Insted, onde seria desenvolvido um software desde o primeiro semestre até sua entrega final."
+    },
+    {
+      id: 2,
+      modalInfo: {
+        title: "teste",
+        frameworks: {
+          items: [{ id: 1, name: "Angular 15.2", link: "https://angular.io/" }],
+        },
+        libraries: {
+          items: [
+            { id: 1, name: "Angular Material", link: "https://v15.material.angular.io/" },
+            { id: 2, name: "SwiperJS", link: "https://swiperjs.com/swiper-api" },
+            { id: 3, name: "Crypto-Js", link: "https://www.npmjs.com/package/crypto-js" },
+            { id: 4, name: "JWT-Decode", link: "https://www.npmjs.com/package/jwt-decode" },
+            { id: 5, name: "Ngrx-Store", link: "https://ngrx.io/guide/store" },
+          ],
+        }
+      },
+      images: {
+        default: [
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+        ],
+        dark: [
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+          { id: 1, url: '/area_perfil_light.png', alt: 'alt' },
+        ]
+      },
+      resume: "teste"
     },
 
   ]
@@ -124,21 +154,21 @@ export default function Projetos() {
         </div>
       </div>
       <div
-        className={`${projetoClaro ? "bg-insted_light brightness-90" : "bg-insted_dark"
-          } bg-center bg-cover card um flex flex-col items-end  row-start-3 row-span-8 col-span-5 rounded-3xl`}
-      ></div>
-      <div
-        className={`${projetoClaro
-          ? "bg-insted_home_light brightness-90"
-          : "bg-insted_home_dark"
-          } card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
-      ></div>
-      <div
-        className={`${projetoClaro
-          ? "bg-insted_perfil_light brightness-90"
-          : "bg-insted_perfil_dark"
-          } card tres bg-insted_perfil_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
-      ></div>
+        className={` relative card um items-end row-start-3 row-span-8 col-span-5 `}
+      >
+        <Image src={projetos[indexProjeto].images.default[0].url} fill alt={projetos[indexProjeto].images.default[0].alt} style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}></Image>
+      </div>
+      {projetos[indexProjeto].images.default.map((item, index: number) => (
+        <div
+          className={` relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
+        >
+
+          <Image src={item.url} fill alt={projetos[indexProjeto].images.default[index].alt} style={{ borderRadius: "24px", objectFit: "cover", objectPosition: "center" }}></Image>
+
+        </div>
+      ))}
+
+
       <div className="grid col-span-9">
         <p
           className={`' ${FiraCode.className} text-2xl text-justify p-2 text-dark dark:text-white '`}
