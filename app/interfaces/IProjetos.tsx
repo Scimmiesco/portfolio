@@ -17,12 +17,14 @@ interface Image {
 }
 
 interface deployment {
-  id: number,
-  name: string,
-  link: string
+  id: number;
+  name: string;
+  link: string;
 }
 interface resume {
-  resume: string
+  resume: {
+    paragraph: string[];
+  };
 }
 interface Project {
   id: number;
@@ -31,11 +33,10 @@ interface Project {
     frameworks: { items: Framework[] };
     libraries: { items: Library[] };
     deployments?: { items: deployment[] };
-  }
+  };
   images: { default: Image[]; dark?: Image[] };
-  resume: string
-};
-
+  resume: { paragraph: string[] };
+}
 
 interface ProjetoCardProps {
   projeto: Project;
@@ -52,4 +53,3 @@ interface LibraryListProps {
 interface ImageGalleryProps {
   images: { default: Image[]; dark?: Image[] };
 }
-

@@ -23,6 +23,9 @@ const config: Config = {
         dark: "#011616",
         teste: "#110109",
       },
+      boxShadow: {
+        "3xl": "inset 0 -150px 25px -110px",
+      },
     },
     gridTemplateRows: {
       // Simple 8 row grid
@@ -41,8 +44,8 @@ const config: Config = {
       "span-10": "span 10 / span 10",
       "span-full": "1 / -1;",
     },
+    plugins: [],
   },
-  plugins: [],
 };
 
 export default config;
