@@ -9,3 +9,9 @@
   transition: all ease-in-out 0.5s;
   border: none;
 }
+
+.resumoExpandido{
+transition: all;
+animation-duration: 0.3 s;
+animation-timing-function: ease-in-out;
+}

@@ -159,6 +159,11 @@ export default function Projetos() {
     },
   ];
   const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
+  const [resumoExpandido, setResumoExpandido] = useState<boolean>(false);
+
+  const handleResumoExpandido = () => {
+    setResumoExpandido(!resumoExpandido);
+  };
 
   const handleDarkModeToggle = (isChecked: boolean) => {
     setProjetoClaro(isChecked);
@@ -183,7 +188,7 @@ export default function Projetos() {
   }
 
   return (
-    <section className="relative border-2 border-white dark:bg-dark bg-white grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center">
+    <section className=" relative border-2 border-white dark:bg-dark bg-white grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center">
       <div className="flex justify-center flex-row items-center row-span-2 col-span-5">
         <h2 className="text-dark text-center text-5xl dark:text-white">
           PROJETOS
@@ -279,7 +284,16 @@ export default function Projetos() {
             </div>
           ))}
 
-      <div className="relative grid col-span-9 h-44 overflow-hidden">
+      <div
+        style={
+          resumoExpandido
+            ? { maxHeight: "44rem", transition: "max-height 0.5s ease-out" }
+            : { maxHeight: "11rem", transition: "max-height 0.5s ease-in-out" }
+        }
+        className={`
+      ${resumoExpandido ? "max-h-fit pb-6" : "max-h-44 "}
+      resumoExpandido relative grid col-span-9 overflow-clip `}
+      >
         {projetos[indexProjeto].resume.paragraph.map((item, index) => (
           <p
             key={index}
@@ -289,11 +303,20 @@ export default function Projetos() {
           </p>
         ))}
 
-        <div className="absolute  z-30 w-full h-full shadow-3xl dark:shadow-dark shadow-white"></div>
+        <div
+          className={`
+        ${resumoExpandido ? "hidden" : "dark:shadow-dark shadow-white"}
+        absolute z-30 w-full h-full shadow-3xl `}
+        ></div>
       </div>
-      <div className="z-50 absolute bottom-0 left-1/2 mb-2 w-10 h-10 bg-white group dark:bg-dark border-2 hover:bg-black dark:border-white border-dark rounded-full flex items-center p-1">
+      <div
+        onClick={handleResumoExpandido}
+        className={`${resumoExpandido ? "" : ""}
+        z-30 absolute bottom-0 left-1/2 mb-1 w-10 h-10 bg-white group dark:bg-dark border-2 hover:bg-black dark:border-white border-dark rounded-full flex items-center p-1      
+        `}
+      >
         <span className="material-symbols-rounded text-dark group-hover:text-white dark:text-white text-center m-auto">
-          arrow_drop_down
+          {resumoExpandido ? "arrow_drop_up" : "arrow_drop_down"}
         </span>
       </div>
     </section>
