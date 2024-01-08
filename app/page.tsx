@@ -10,9 +10,9 @@ export default function Home() {
           OLÁ, SOU O PEDRO
         </h1>
       </section>
-      <SobreMim></SobreMim>
-      <Projetos></Projetos>
-      <Footer></Footer>
+      <SobreMim />
+      <Projetos />
+      <Footer />
     </main>
   );
 }

@@ -24,18 +24,16 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
       {modalFechado ? null : (
         <div
           id="modal"
-          className={`${
-            modalFechado
+          className={`${modalFechado
               ? "opacity-0 h-0 w-0 transition-none"
               : "opacity-95 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
-          } modal absolute px-1 py-1  bg-white dark:bg-dark border-2  dark:border-white white -top-0 left-16 rounded-l-md z-40 rounded-3xl `}
+            } modal absolute px-1 py-1  bg-white dark:bg-dark border-2  dark:border-white white -top-0 left-16 rounded-l-md z-40 rounded-3xl `}
         >
           <div>
             <div className="">
               <h3
-                className={`${
-                  modalFechado ? "opacity-0 transition-none" : "opacity-1"
-                } text-dark dark:text-white text-center text-3xl`}
+                className={`${modalFechado ? "opacity-0 transition-none" : "opacity-1"
+                  } text-dark dark:text-white text-center text-3xl`}
               >
                 {projeto.modalInfo.title}
               </h3>
