@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect } from "react";
 import "../../globals.css";
 import SwitchTema from "./switcher_tema/switch_tema";
@@ -11,7 +11,6 @@ export default function Menu({ temaCookie }: any) {
       nome: "home",
       rotulo: "Início",
     },
-
   ];
   const [tema, setTema] = useDarkMode(temaCookie);
 
@@ -21,19 +20,23 @@ export default function Menu({ temaCookie }: any) {
   const voltaProTopo = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  }
+  };
 
   return (
     <section className="flex justify-center flex-row w-full h-fit z-40 fixed px-8 py-2">
-      <nav className="flex flex-row justify-center gap-4 w-full"> <ul className="my-auto">
-        <li>
-          <SwitchTema
-
-            onToggle={handleDarkModeToggle} iconePadrao={temaCookie} idPrefix="switch_menu"></SwitchTema>
-        </li>
-      </ul>
+      <nav className="flex flex-row justify-center gap-4 w-full">
+        {" "}
+        <ul className="my-auto">
+          <li>
+            <SwitchTema
+              onToggle={handleDarkModeToggle}
+              iconePadrao={temaCookie}
+              idPrefix="switch_menu"
+            ></SwitchTema>
+          </li>
+        </ul>
         <ul className="flex flex-row gap-1 items-center">
           {itensMenu.map((item) => (
             <li
@@ -47,7 +50,6 @@ export default function Menu({ temaCookie }: any) {
             </li>
           ))}
         </ul>
-
       </nav>
     </section>
   );
