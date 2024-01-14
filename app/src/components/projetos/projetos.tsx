@@ -189,11 +189,11 @@ export default function Projetos() {
 
   return (
     <section className=" relative border-2 border-white dark:bg-dark bg-white grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center">
-      <div className="flex justify-center flex-row items-center row-span-2 col-span-5">
-        <h2 className="text-dark text-center text-5xl dark:text-white">
+      <div className="grid items-center row-span-2 tablet:row-span-1 col-span-5 grid-rows-subgrid tablet:grid-cols-subgrid">
+        <h2 className="text-dark text-center tablet:text-5xl text-3xl dark:text-white row-start-1 row-span-1 col-span-4 ">
           PROJETOS
         </h2>
-        <div>
+        <div className="row-start-2 row-span-1 tablet:col-span-1 text-center">
           <span
             onClick={projetoAnterior}
             className="active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl"
