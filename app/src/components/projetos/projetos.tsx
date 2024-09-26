@@ -1,51 +1,19 @@
 "use client";
+
 import { useState } from "react";
-import SwitchTema from "../switcher_tema/switch_tema";
 import "./projetos.css";
 import InfoProjetos from "../infoProjetos/info_projeto";
-import { FiraCode } from "@/app/ui/fonts";
-import Image from "next/image";
+import Image from 'next/image';
+
 
 export default function Projetos() {
-  var linkMenuProjeto = [
-    {
-      idProjeto: 1,
-      botoes: [
-        {
-          id: 1,
-          nome: "open_in_new",
-          link: "https://areainsted.vercel.app/login",
-        },
-        {
-          id: 2,
-          nome: "folder_data",
-          link: "https://github.com/Scimmiesco/portfolio",
-        },
-      ],
-    },
-    {
-      idProjeto: 2,
-      botoes: [
-        {
-          id: 1,
-          nome: "open_in_new",
-          link: "https://webapi20230927142946.azurewebsites.net/swagger/index.html",
-        },
-        {
-          id: 2,
-          nome: "folder_data",
-          link: "https://dev.azure.com/palmeida0253/Area%20Insted/_git/Backend",
-        },
-      ],
-    },
-  ];
   const projetos: Project[] = [
     {
       id: 1,
       modalInfo: {
         title: "Área Insted FRONTEND",
         frameworks: {
-          items: [{ id: 1, name: "Angular 15.2", link: "https://angular.io/" }],
+          items: [{ id: 1, name: "Angular 15", link: "https://angular.io/" }],
         },
         libraries: {
           items: [
@@ -78,22 +46,16 @@ export default function Projetos() {
       },
       images: {
         default: [
-          { id: 1, url: "/areaInsted_front/area_insted_light.png", alt: "alt" },
-          { id: 2, url: "/areaInsted_front/area_home_light.png", alt: "alt" },
-          { id: 3, url: "/areaInsted_front/area_perfil_light.png", alt: "alt" },
-        ],
-        dark: [
-          { id: 1, url: "/areaInsted_front/area_insted_dark.png", alt: "alt" },
-          { id: 2, url: "/areaInsted_front/area_home_dark.png", alt: "alt" },
-          { id: 3, url: "/areaInsted_front/area_perfil_dark.png", alt: "alt" },
+          { id: 1, url: "/projetos/areaInsted/areaInsted.png", alt: "alt" },
         ],
       },
       resume: {
         paragraph: [
-          "No contexto do Projeto Integrador da faculdade Insted, o desenvolvimento do Ambiente Virtual de Aprendizagem (AVA) ao longo de diversos semestres culmina em uma conclusão abrangente. Ao enfocar o frontend, destaca-se a escolha da utilização do Angular com Typescript para a implementação da interface de usuário. Essa decisão foi motivada pela robustez, modularidade e facilidade de manutenção oferecidas pelo Angular, juntamente com os benefícios adicionais de tipagem estática proporcionados pelo Typescript, que contribuem para um desenvolvimento mais seguro e eficiente.",
-          " No que diz respeito ao deploy, o serviço do frontend foi implantado utilizando os recursos da plataforma Vercel. Esta escolha se justifica pela simplicidade, agilidade e facilidade de uso oferecidas pela Vercel, proporcionando uma hospedagem rápida e confiável para o frontend Angular do AVA. O uso dessa plataforma agrega eficiência ao processo de deploy, garantindo uma entrega contínua e uma experiência de usuário otimizada para os alunos durante a interação com o sistema.",
+          "No Projeto Integrador da faculdade Insted, o desenvolvimento do Ambiente Virtual de Aprendizagem (AVA) culmina com foco no frontend, implementado em Angular com TypeScript. Essa escolha se deve à robustez, modularidade e manutenção facilitada do Angular, além da segurança e eficiência da tipagem estática do TypeScript. ",
+          "O deploy do frontend foi realizado na plataforma Vercel, escolhida pela sua simplicidade e agilidade, garantindo uma hospedagem rápida e confiável, melhorando a experiência dos alunos ao utilizar o sistema.",
         ],
       },
+      link: "https://dev.azure.com/palmeida0253/Area%20Insted/_git/Backend",
     },
     {
       id: 2,
@@ -145,17 +107,16 @@ export default function Projetos() {
       },
       images: {
         default: [
-          { id: 1, url: "/areaInsted_back/swagger_metodos.png", alt: "alt" },
-          { id: 2, url: "/areaInsted_back/swagger_metodos.png", alt: "alt" },
-          { id: 3, url: "/areaInsted_back/swagger_metodos.png", alt: "alt" },
+          { id: 1, url: "/projetos/areaInsted/areaInsted.png", alt: "alt" },
         ],
       },
       resume: {
         paragraph: [
-          "Quanto ao backend, o projeto concentra-se na implementação de uma Web API integrada com o SQL Server. Essa abordagem utiliza solicitações HTTP para fornecer informações dinâmicas ao frontend, visando a eficiente gestão de dados, garantia de segurança e integridade das informações armazenadas no SQL Server, além de oferecer suporte eficaz às operações educacionais.",
-          "É relevante mencionar que o serviço da API foi implantado utilizando os recursos da plataforma Azure, integrando-se ao banco de dados. Essa estratégia de deploy na nuvem amplia a escalabilidade, confiabilidade e acessibilidade do sistema, contribuindo para uma experiência completa e integrada aos usuários finais por meio de interações HTTP entre o frontend e o backend.",
+          "O backend foi implementado como uma Web API integrada ao SQL Server, utilizando solicitações HTTP para fornecer dados dinâmicos ao frontend, garantindo gestão eficiente, segurança e integridade das informações.",
+          "A API foi implantada na plataforma Azure, ampliando a escalabilidade, confiabilidade e acessibilidade do sistema, proporcionando uma experiência integrada e eficiente para os usuários.",
         ],
       },
+      link: "https://webapi20230927142946.azurewebsites.net/swagger/index.html",
     },
   ];
   const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
@@ -188,136 +149,78 @@ export default function Projetos() {
   }
 
   return (
-    <section className=" relative border-2 border-white dark:bg-dark bg-white grid grid-rows-10 grid-cols-9 grid-flow-row gap-2 p-4 rounded-3xl min-h-[75vh]  w-full justify-center">
-      <div className="grid items-center row-span-2 tablet:row-span-1 col-span-5 grid-rows-subgrid tablet:grid-cols-subgrid">
-        <h2 className="text-dark text-center tablet:text-5xl text-3xl dark:text-white row-start-1 row-span-1 col-span-4 ">
-          PROJETOS
+    <section className="container-padrao rounded-md relative">
+      <div className="flex flex-row justify-center items-center w-1/2">
+        <h2 className="text-dark text-center text-6xl dark:text-white">
+          Projetos
         </h2>
-        <div className="row-start-2 row-span-1 tablet:col-span-1 text-center">
+        <div className="flex flex-nowrap text-center">
           <span
             onClick={projetoAnterior}
-            className="active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl"
+            className="cursor-pointer active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl"
           >
             chevron_left
           </span>
           <span
             onClick={proximoProjeto}
-            className="active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl "
+            className="cursor-pointer active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl "
           >
             chevron_right
           </span>
         </div>
       </div>
-      <div className="flex place-items-end justify-end row-span-1 col-span-4 items-end gap-2 my-auto">
-        {projetos[indexProjeto].images.dark != null && (
-          <div className="my-auto">
-            <SwitchTema
-              onToggle={handleDarkModeToggle}
-              iconePadrao={projetoClaro ? "light" : "dark"}
-              idPrefix="switch_projeto_1"
-            ></SwitchTema>
+      <ul className="flex place-items-end justify-end row-span-1 tablet:col-span-4  col-span-19 items-center tablet:items-center gap-2 my-auto">
+        <li>
+          <a
+            target="_blank"
+            href={projetos[indexProjeto].link}
+            className="my-auto"
+          >
+            <div
+
+              className="group icone-padrao"
+            >
+              <i className="fi fi-sr-address-card groupHover-padrao"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href={projetos[indexProjeto].link}
+            className="my-auto"
+          >
+            <div
+
+              className="group icone-padrao"
+            >
+              <i className="fi fi-sr-display-code groupHover-padrao"></i>
+            </div>
+          </a>
+        </li>
+        <InfoProjetos projeto={projetos[indexProjeto]} />
+      </ul>
+      <div className="flex flex-col flex-grow ">
+        {projetos[indexProjeto].images.default.map((item, index: number) => (
+          <div
+            key={index}
+            className="relative w-full min-h-[50svh]">
+            <Image
+              src={item.url}
+              fill
+              alt={item.alt}
+              className="object-contain"
+            ></Image>
           </div>
-        )}
-        {linkMenuProjeto.map(
-          (projeto) =>
-            projeto.idProjeto === projetos[indexProjeto].id &&
-            projeto.botoes.map((botao) => (
-              <a
-                key={botao.id}
-                target="_blank"
-                href={botao.link}
-                className="my-auto cursor-none"
-              >
-                <div
-                  key={botao.id}
-                  className="w-10 h-10 bg-white group dark:bg-dark border-2 hover:bg-black dark:border-white border-dark rounded-full flex items-center p-1"
-                >
-                  <span className="material-symbols-rounded text-dark group-hover:text-white dark:text-white text-center m-auto">
-                    {botao.nome}
-                  </span>
-                </div>
-              </a>
-            ))
-        )}
-        <InfoProjetos projeto={projetos[indexProjeto]}></InfoProjetos>
-      </div>
-
-      {projetoClaro || projetos[indexProjeto].images.dark == null
-        ? projetos[indexProjeto].images.default.map((item, index: number) => (
-            <div
-              key={index}
-              className={` 
-          ${index === 0 ? "row-start-3 row-span-8 col-span-5" : ""}
-          relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
-            >
-              <Image
-                src={item.url}
-                fill
-                alt={item.alt}
-                style={{
-                  borderRadius: "24px",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              ></Image>
-            </div>
-          ))
-        : projetoClaro == false &&
-          projetos[indexProjeto].images.dark != null &&
-          projetos[indexProjeto].images.dark?.map((item, index: number) => (
-            <div
-              key={index}
-              className={` 
-          ${index === 0 ? "row-start-3 row-span-8 col-span-5" : ""}
-          relative card dois bg-insted_home_dark bg-start bg-cover bg-no-repeat row-span-9 col-span-2  rounded-3xl`}
-            >
-              <Image
-                src={item.url}
-                fill
-                alt={item.alt}
-                style={{
-                  borderRadius: "24px",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              ></Image>
-            </div>
-          ))}
-
-      <div
-        style={
-          resumoExpandido
-            ? { maxHeight: "44rem", transition: "max-height 0.5s ease-out" }
-            : { maxHeight: "11rem", transition: "max-height 0.5s ease-in-out" }
-        }
-        className={`
-      ${resumoExpandido ? "max-h-fit pb-6" : "max-h-44 "}
-      resumoExpandido relative grid col-span-9 overflow-clip `}
-      >
+        ))}
         {projetos[indexProjeto].resume.paragraph.map((item, index) => (
           <p
             key={index}
-            className={` ${FiraCode.className} text-xl text-justify p-2 text-dark dark:text-white `}
+            className={`text-xl text-justify p-2 text-dark dark:text-white ${resumoExpandido ? 'line-clamp-none' : 'line-clamp-6'}`}
           >
             {item}
           </p>
         ))}
-
-        <div
-          className={`
-        ${resumoExpandido ? "hidden" : "dark:shadow-dark shadow-white"}
-        absolute z-30 w-full h-full shadow-3xl `}
-        ></div>
-      </div>
-      <div
-        onClick={handleResumoExpandido}
-        className={`${resumoExpandido ? "" : ""}
-        z-30 absolute bottom-0 left-1/2 mb-1 w-10 h-10 bg-white group dark:bg-dark border-2 hover:bg-black dark:border-white border-dark rounded-full flex items-center p-1      
-        `}
-      >
-        <span className="material-symbols-rounded text-dark group-hover:text-white dark:text-white text-center m-auto">
-          {resumoExpandido ? "arrow_drop_up" : "arrow_drop_down"}
-        </span>
       </div>
     </section>
   );

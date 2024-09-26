@@ -6,66 +6,48 @@ export default function Footer() {
     redesSociais: [
       {
         id: 1,
-        nome: "Linkedin",
-        link: "https://www.linkedin.com",
-        sources: {
-          default: "/redes_sociais/linkedin.png",
-          dark: "/redes_sociais/linkedin_dark_mode.png",
-        },
-        alt: "Ícone do Linkedin",
+        nome: "Instagram",
+        classe: "fi fi-brands-instagram",
+        link: "https://www.instagram.com",
       },
       {
         id: 2,
         nome: "Github",
+        classe: "fi fi-brands-github",
         link: "https://www.github.com",
-        sources: {
-          default: "/redes_sociais/github.png",
-          dark: "/redes_sociais/github_dark_mode.png",
-        },
-        alt: "Ícone do Github",
+
       },
       {
         id: 3,
-        nome: "Instagram",
-        link: "https://www.instagram.com",
-        sources: {
-          default: "/redes_sociais/instagram.png",
-          dark: "/redes_sociais/instagram_dark_mode.png",
-        },
-        alt: "Ícone do Instagram",
+        nome: "Linkedin",
+        classe: "fi fi-brands-linkedin",
+        link: "https://www.linkedin.com",
       },
     ],
   };
 
   return (
-    <section className="relative flex flex-row flex-1 justify-between text-center items-center border-2 border-white dark:bg-dark bg-white gap-2 p-4 rounded-3xl w-full">
-      <a className="linkSeta " href="mailto:p.almeida@live.com">
+    <section className="container-padrao  flex flex-row text-center items-center justify-between rounded-b-3xl rounded-t-md">
+    <a className="linkSeta dark:text-white" href="mailto:p.almeida@live.com ">
         <div className="flex justify-center text-center items-center">
-          <span className="material-symbols-rounded text-center text-[44px]">
-            mail
-          </span>
+          <i className="fi fi-br-envelope text-center text-4xl"></i>
           <p className="text-lg px-1 whitespace-nowrap text-center ">
             P.ALMEIDA@LIVE.COM
           </p>
         </div>
       </a>
       <nav>
-        <ul className="flex flex-row">
+        <ul className="flex flex-row gap-4">
           {icones.redesSociais.map((item) => (
-            <li key={item.id} className="m-2">
+            <li key={item.id}>
               <a
                 href={item.link}
                 target="_blank"
-                title={item.nome}
+                title={`Ícone com link para o site do ${item.nome}`}
                 className="flex justify-center"
               >
-                <Image
-                  className="bg-center bg-cover active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300"
-                  src={item.sources.default}
-                  width={44}
-                  height={44}
-                  alt={item.alt}
-                ></Image>
+                <i
+                  className={`${item.classe} text-4xl text-dark dark:text-white`} ></i>
               </a>
             </li>
           ))}

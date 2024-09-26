@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  exports : {
+  exports: {
     important: true,
   },
   content: [
@@ -13,16 +13,21 @@ const config: Config = {
   darkMode: "class",
   theme: {
     screens: {
-      'tablet': '768px',
+      tablet: "768px",
       // => @media (min-width: 640px) { ... }
 
-      'laptop': '1024px',
+      laptop: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      'desktop': '1280px',
+      desktop: "1280px",
       // => @media (min-width: 1280px) { ... }
     },
     extend: {
+      fontFamily: {
+        titulo: ["var(--font-Concert-One)"],
+        corpo: ["var(--font-Fira-Code)"],
+      },
+
       backgroundImage: {
         insted_light: "url('/area_insted_light.png')",
         insted_dark: "url('/area_insted_dark.png')",
@@ -32,9 +37,8 @@ const config: Config = {
         insted_perfil_light: "url('/area_perfil_light.png')",
       },
       colors: {
-        white: "#f7f3d8",
-        dark: "#011616",
-        teste: "#110109",
+        white: "#e4f1f8",
+        dark: "#0b0116",
       },
       boxShadow: {
         "3xl": "inset 0 -150px 25px -110px",

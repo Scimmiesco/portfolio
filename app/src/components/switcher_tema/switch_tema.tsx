@@ -23,13 +23,13 @@ export default function SwitchTema({ idPrefix = "", onToggle, iconePadrao }: any
       <input
         type="checkbox"
         id={temaCheckboxId}
-        className="opacity-0 cursor-none absolute w-10 h-10 group hover:bg-dark"
+        className="opacity-0  absolute w-10 h-10 group hover:bg-dark"
         checked={isChecked}
         onChange={handleToggle}
       />
       <label
         htmlFor={temaCheckboxId}
-        className="cursor-none overflow-hidden group hover:bg-dark relative w-10 h-10 bg-white dark:bg-dark border-2 dark:border-white border-dark rounded-full flex items-center p-1 z-30"
+        className=" overflow-hidden group hover:bg-dark relative w-10 h-10 bg-white dark:bg-dark border-2 dark:border-white border-dark rounded-full flex items-center p-1 z-30"
       >
         <span
           id={`${idPrefix}dark_icon`}

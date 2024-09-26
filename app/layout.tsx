@@ -3,7 +3,7 @@ import "./globals.css";
 import Menu from "./src/components/menu";
 import PontoSeguidor from "./src/components/cursor";
 import { cookies } from "next/headers";
-import { ConcertOne } from "@/app/ui/fonts";
+import { ConcertOne, FiraCode } from "@/app/ui/fonts";
 import { Children, cloneElement } from "react";
 
 export const metadata: Metadata = {
@@ -21,9 +21,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${ConcertOne.className} antialiased w-full flex flex-col justify-start rounded-3xl min-h-[100svh] dark:bg-dark bg-dark relative overflow-x-hidden`}
+        className={`${ConcertOne.variable} ${FiraCode.variable} antialiased w-full flex flex-col justify-start min-h-screen dark:bg-dark bg-dark overflow-x-hidden`}
       >
-        <PontoSeguidor />
         <Menu temaCookie={temaCookie} />
         {Children.map(children, (child) =>
           cloneElement(child as React.ReactElement, { temaCookie })

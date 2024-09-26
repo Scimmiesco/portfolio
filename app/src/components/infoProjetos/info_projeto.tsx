@@ -15,18 +15,17 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
     <section className="relative infoSection">
       <button
         onClick={toggleModalAberto}
-        className="cursor-none w-10 h-10 group dark:bg-dark border-2 dark:border-white border-dark hover:bg-black rounded-full flex items-center p-1"
+        className="icone-padrao group relative"
       >
-        <span className="material-symbols-rounded text-dark group-hover:text-white dark:text-white text-center m-auto">
-          info
-        </span>
+        <i className="fi fi-sr-info">
+        </i>
       </button>
       {modalFechado ? null : (
         <div
           id="modal"
           className={`${modalFechado
-              ? "opacity-0 h-0 w-0 transition-none"
-              : "opacity-95 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
+            ? "opacity-0 h-0 w-0 transition-none"
+            : "opacity-95 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
             } modal absolute px-1 py-1  bg-white dark:bg-dark border-2  dark:border-white white -top-0 left-16 rounded-l-md z-40 rounded-3xl `}
         >
           <div>

@@ -36,6 +36,7 @@ interface Project {
   };
   images: { default: Image[]; dark?: Image[] };
   resume: { paragraph: string[] };
+  link: string
 }
 
 interface ProjetoCardProps {
