@@ -4,15 +4,37 @@
     "modalInfo": {
       "title": "Área Insted FRONTEND",
       "frameworks": {
-        "items": [{ "id": 1, "name": "Angular 15", "link": "https://angular.io/" }]
+        "items": [
+          { "id": 1, "name": "Angular 15", "link": "https://angular.io/" }
+        ]
       },
       "libraries": {
         "items": [
-          { "id": 1, "name": "Angular Material", "link": "https://v15.material.angular.io/" },
-          { "id": 2, "name": "SwiperJS", "link": "https://swiperjs.com/swiper-api" },
-          { "id": 3, "name": "Crypto-Js", "link": "https://www.npmjs.com/package/crypto-js" },
-          { "id": 4, "name": "JWT-Decode", "link": "https://www.npmjs.com/package/jwt-decode" },
-          { "id": 5, "name": "Ngrx-Store", "link": "https://ngrx.io/guide/store" }
+          {
+            "id": 1,
+            "name": "Angular Material",
+            "link": "https://v15.material.angular.io/"
+          },
+          {
+            "id": 2,
+            "name": "SwiperJS",
+            "link": "https://swiperjs.com/swiper-api"
+          },
+          {
+            "id": 3,
+            "name": "Crypto-Js",
+            "link": "https://www.npmjs.com/package/crypto-js"
+          },
+          {
+            "id": 4,
+            "name": "JWT-Decode",
+            "link": "https://www.npmjs.com/package/jwt-decode"
+          },
+          {
+            "id": 5,
+            "name": "Ngrx-Store",
+            "link": "https://ngrx.io/guide/store"
+          }
         ]
       },
       "deployments": {
@@ -20,7 +42,9 @@
       }
     },
     "images": {
-      "default": [{ "id": 1, "url": "/projetos/areaInsted/areaInsted.png", "alt": "alt" }]
+      "default": [
+        { "id": 1, "url": "/projetos/areaInsted/areaInsted.png", "alt": "alt" }
+      ]
     },
     "resume": {
       "paragraph": [
@@ -35,23 +59,57 @@
     "modalInfo": {
       "title": "Área Insted BACKEND",
       "frameworks": {
-        "items": [{ "id": 1, "name": ".NET Framework 6.0", "link": "https://angular.io/" }]
+        "items": [
+          {
+            "id": 1,
+            "name": ".NET Framework 6.0",
+            "link": "https://angular.io/"
+          }
+        ]
       },
       "libraries": {
         "items": [
-          { "id": 1, "name": "Azure Identity", "link": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme?view=azure-dotnet" },
-          { "id": 2, "name": "Azure Key Vault", "link": "https://learn.microsoft.com/pt-br/aspnet/core/security/key-vault-configuration?view=aspnetcore-8.0" },
-          { "id": 3, "name": "Web API Core", "link": "https://learn.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio" },
-          { "id": 4, "name": "Entity Framework", "link": "https://learn.microsoft.com/pt-br/aspnet/core/data/entity-framework-6?view=aspnetcore-8.0" },
-          { "id": 5, "name": "NetCore Mailkit", "link": "https://www.nuget.org/packages/NETCore.MailKit/" }
+          {
+            "id": 1,
+            "name": "Azure Identity",
+            "link": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme?view=azure-dotnet"
+          },
+          {
+            "id": 2,
+            "name": "Azure Key Vault",
+            "link": "https://learn.microsoft.com/pt-br/aspnet/core/security/key-vault-configuration?view=aspnetcore-8.0"
+          },
+          {
+            "id": 3,
+            "name": "Web API Core",
+            "link": "https://learn.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio"
+          },
+          {
+            "id": 4,
+            "name": "Entity Framework",
+            "link": "https://learn.microsoft.com/pt-br/aspnet/core/data/entity-framework-6?view=aspnetcore-8.0"
+          },
+          {
+            "id": 5,
+            "name": "NetCore Mailkit",
+            "link": "https://www.nuget.org/packages/NETCore.MailKit/"
+          }
         ]
       },
       "deployments": {
-        "items": [{ "id": 1, "name": "Azure Websites", "link": "https://azure.microsoft.com/en-us/products/app-service/web" }]
+        "items": [
+          {
+            "id": 1,
+            "name": "Azure Websites",
+            "link": "https://azure.microsoft.com/en-us/products/app-service/web"
+          }
+        ]
       }
     },
     "images": {
-      "default": [{ "id": 1, "url": "/projetos/areaInsted/areaInsted.png", "alt": "alt" }]
+      "default": [
+        { "id": 1, "url": "/projetos/areaInsted/areaInsted.png", "alt": "alt" }
+      ]
     },
     "resume": {
       "paragraph": [
@@ -60,5 +118,54 @@
       ]
     },
     "link": "https://webapi20230927142946.azurewebsites.net/swagger/index.html"
+  },
+  {
+    "id": 3,
+    "modalInfo": {
+      "title": "Landing Page - Elaine Oliveira",
+      "frameworks": {
+        "items": [
+          {
+            "id": 1,
+            "name": "Angular 18",
+            "link": "https://angular.io/"
+          }
+        ]
+      },
+      "libraries": {
+        "items": [
+          {
+            "id": 1,
+            "name": "Angular Material",
+            "link": "https://v15.material.angular.io/"
+          },
+          {
+            "id": 3,
+            "name": "Crypto-Js",
+            "link": "https://www.npmjs.com/package/crypto-js"
+          },
+          {
+            "id": 4,
+            "name": "JWT-Decode",
+            "link": "https://www.npmjs.com/package/jwt-decode"
+          }
+        ]
+      },
+      "deployments": {
+        "items": [{ "id": 1, "name": "Vercel", "link": "https://vercel.com/" }]
+      }
+    },
+    "images": {
+      "default": [
+        { "id": 1, "url": "/projetos/lpElaine/lpElaine.png", "alt": "alt" }
+      ]
+    },
+    "resume": {
+      "paragraph": [
+        "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização. O projeto utiliza as bibliotecas mais recentes.",
+        "Backend desenvolvido com ExpressJS para armazenar informações de usuários e produtos."
+      ]
+    },
+    "link": "https://www.lojaelaineoliveira.com.br/"
   }
 ]

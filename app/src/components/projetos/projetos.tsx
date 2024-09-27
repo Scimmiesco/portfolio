@@ -117,7 +117,56 @@ export default function Projetos() {
         ],
       },
       link: "https://webapi20230927142946.azurewebsites.net/swagger/index.html",
-    },
+    }, {
+      "id": 3,
+      "modalInfo": {
+        "title": "Landing Page - Elaine Oliveira",
+        "frameworks": {
+          "items": [
+            {
+              "id": 1,
+              "name": "Angular 18",
+              "link": "https://angular.io/"
+            }
+          ]
+        },
+        "libraries": {
+          "items": [
+            {
+              "id": 1,
+              "name": "Angular Material",
+              "link": "https://v15.material.angular.io/"
+            },
+            {
+              "id": 3,
+              "name": "Crypto-Js",
+              "link": "https://www.npmjs.com/package/crypto-js"
+            },
+            {
+              "id": 4,
+              "name": "JWT-Decode",
+              "link": "https://www.npmjs.com/package/jwt-decode"
+            }
+          ]
+        },
+        "deployments": {
+          "items": [{ "id": 1, "name": "VPS Webtropia", "link": "https://www.webtropia.com/" }]
+        }
+      },
+      "images": {
+        "default": [
+          { "id": 1, "url": "/projetos/lpElaine/lpElaine.png", "alt": "alt" }
+        ]
+      },
+      "resume": {
+        "paragraph": [
+          "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização.",
+          "Backend desenvolvido com ExpressJS para armazenar informações de usuários e produtos.",
+          "Habilidades aplicadas na construção da landing page incluem integração com Kiwify para gestão de pagamentos, otimização de SEO para melhorar a visibilidade nos motores de busca, design responsivo com Tailwind CSS, e uso de práticas de marketing digital para conversão de leads."
+        ]
+      },
+      "link": "https://www.lojaelaineoliveira.com.br/"
+    }
   ];
   const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
   const [resumoExpandido, setResumoExpandido] = useState<boolean>(false);
@@ -213,14 +262,15 @@ export default function Projetos() {
             ></Image>
           </div>
         ))}
-        {projetos[indexProjeto].resume.paragraph.map((item, index) => (
-          <p
-            key={index}
-            className={`text-xl text-justify p-2 text-dark dark:text-white ${resumoExpandido ? 'line-clamp-none' : 'line-clamp-6'}`}
-          >
-            {item}
-          </p>
-        ))}
+        <div className="min-h-60 max-h-60 overflow-y-hidden p-2">
+          {projetos[indexProjeto].resume.paragraph.map((item, index) => (
+            <p
+              key={index}
+              className={`text-xl text-pretty p-2 text-dark dark:text-white `}
+            >
+              {item}
+            </p>
+          ))}</div>
       </div>
     </section>
   );
