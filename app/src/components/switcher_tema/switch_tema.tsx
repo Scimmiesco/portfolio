@@ -3,19 +3,21 @@
 import { useState } from "react";
 import "../../../globals.css";
 import "./switch_tema.css";
-export default function SwitchTema({ idPrefix = "", onToggle, iconePadrao }: any) {
-
+export default function SwitchTema({
+  idPrefix = "",
+  onToggle,
+  iconePadrao,
+}: any) {
   const temaCheckboxId = `${idPrefix}tema_checkbox`;
 
   const [isChecked, setIsChecked] = useState(
-    iconePadrao === 'light' ? true
-      : iconePadrao === 'dark' ? false : true);
-
+    iconePadrao === "light" ? true : iconePadrao === "dark" ? false : true
+  );
 
   const handleToggle = () => {
     const isCheckedToogle = !isChecked;
     setIsChecked(isCheckedToogle);
-    onToggle(isCheckedToogle)
+    onToggle(isCheckedToogle);
   };
 
   return (
@@ -23,23 +25,31 @@ export default function SwitchTema({ idPrefix = "", onToggle, iconePadrao }: any
       <input
         type="checkbox"
         id={temaCheckboxId}
-        className="opacity-0  absolute w-10 h-10 group hover:bg-dark"
+        className="opacity-0 absolute w-10 h-10 group hover:bg-dark "
         checked={isChecked}
         onChange={handleToggle}
       />
       <label
         htmlFor={temaCheckboxId}
-        className=" overflow-hidden group hover:bg-dark relative w-10 h-10 bg-white dark:bg-dark border-2 dark:border-white border-dark rounded-full flex items-center p-1 z-30"
+        className=" 
+        !cursor-pointer 
+        overflow-hidden 
+        group
+        icone_cores
+        icone-padrao
+        relative 
+        w-10 h-10
+        flex justify-center items-center p-1 z-50"
       >
         <span
           id={`${idPrefix}dark_icon`}
-          className="material-symbols-rounded text-dark dark:text-white text-3xl group-hover:text-white"
+          className="material-symbols-rounded text-3xl groupHover-padrao"
         >
           dark_mode
         </span>
         <span
           id={`${idPrefix}light_icon`}
-          className="light_icon material-symbols-rounded group-hover:text-white text-dark dark:text-white text-3xl absolute translate-x-10 opacity-0"
+          className="light_icon material-symbols-rounded text-3xl absolute translate-x-10 opacity-0 groupHover-padrao"
         >
           light_mode
         </span>

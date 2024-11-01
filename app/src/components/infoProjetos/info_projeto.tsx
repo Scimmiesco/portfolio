@@ -13,26 +13,27 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
 
   return (
     <section className="relative infoSection">
-      <button
+      <div
         onClick={toggleModalAberto}
-        className="icone-padrao group relative"
+        className="cursor-pointer icone-padrao group relative"
       >
-        <i className="fi fi-sr-info">
-        </i>
-      </button>
+        <i className="fi fi-sr-info groupHover-padrao"></i>
+      </div>
       {modalFechado ? null : (
         <div
           id="modal"
-          className={`${modalFechado
-            ? "opacity-0 h-0 w-0 transition-none"
-            : "opacity-95 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
-            } modal absolute px-1 py-1  bg-white dark:bg-dark border-2  dark:border-white white -top-0 left-16 rounded-l-md z-40 rounded-3xl `}
+          className={`${
+            modalFechado
+              ? "opacity-0 h-0 w-0 transition-none"
+              : "opacity-95 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
+          } modal absolute px-1 py-1  bg-white dark:bg-dark border-2  dark:border-white white -top-0 left-20 rounded-l-md z-40 rounded-3xl `}
         >
           <div>
             <div className="">
               <h3
-                className={`${modalFechado ? "opacity-0 transition-none" : "opacity-1"
-                  } text-dark dark:text-white text-center text-3xl`}
+                className={`${
+                  modalFechado ? "opacity-0 transition-none" : "opacity-1"
+                } text-dark dark:text-white text-center text-3xl`}
               >
                 {projeto.modalInfo.title}
               </h3>
@@ -47,7 +48,9 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                   {projeto.modalInfo.frameworks.items.map((item, index) => (
                     <li key={index} className={FiraCode.className}>
                       <a className="linkSeta" href={item.link}>
-                        <p className="text-lg px-1 whitespace-nowrap">{item.name}</p>
+                        <p className="text-lg px-1 whitespace-nowrap">
+                          {item.name}
+                        </p>
                       </a>
                     </li>
                   ))}
@@ -57,7 +60,9 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                   {projeto.modalInfo.libraries.items.map((item, index) => (
                     <li key={index} className={FiraCode.className}>
                       <a className="linkSeta" href={item.link} target="_blank">
-                        <p className="text-lg px-1 whitespace-nowrap">{item.name}</p>
+                        <p className="text-lg px-1 whitespace-nowrap">
+                          {item.name}
+                        </p>
                       </a>
                     </li>
                   ))}
@@ -65,19 +70,19 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                 {projeto.modalInfo.deployments != null && (
                   <li>
                     <h4 className="text-2xl py-1">Implantação</h4>
-                    {projeto.modalInfo.deployments?.items.map(
-                      (item, index) => (
-                        <li key={index} className={FiraCode.className}>
-                          <a
-                            className="linkSeta"
-                            href={item.link}
-                            target="_blank"
-                          >
-                            <p className="text-lg px-1 whitespace-nowrap">{item.name}</p>
-                          </a>
-                        </li>
-                      )
-                    )}
+                    {projeto.modalInfo.deployments?.items.map((item, index) => (
+                      <li key={index} className={FiraCode.className}>
+                        <a
+                          className="linkSeta"
+                          href={item.link}
+                          target="_blank"
+                        >
+                          <p className="text-lg px-1 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                        </a>
+                      </li>
+                    ))}
                   </li>
                 )}
               </ul>

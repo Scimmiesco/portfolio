@@ -3,8 +3,7 @@
 import { useState } from "react";
 import "./projetos.css";
 import InfoProjetos from "../infoProjetos/info_projeto";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 export default function Projetos() {
   const projetos: Project[] = [
@@ -117,56 +116,63 @@ export default function Projetos() {
         ],
       },
       link: "https://webapi20230927142946.azurewebsites.net/swagger/index.html",
-    }, {
-      "id": 3,
-      "modalInfo": {
-        "title": "Landing Page - Elaine Oliveira",
-        "frameworks": {
-          "items": [
+    },
+    {
+      id: 3,
+      modalInfo: {
+        title: "Landing Page - Elaine Oliveira",
+        frameworks: {
+          items: [
             {
-              "id": 1,
-              "name": "Angular 18",
-              "link": "https://angular.io/"
-            }
-          ]
+              id: 1,
+              name: "Angular 18",
+              link: "https://angular.io/",
+            },
+          ],
         },
-        "libraries": {
-          "items": [
+        libraries: {
+          items: [
             {
-              "id": 1,
-              "name": "Angular Material",
-              "link": "https://v15.material.angular.io/"
+              id: 1,
+              name: "Angular Material",
+              link: "https://v15.material.angular.io/",
             },
             {
-              "id": 3,
-              "name": "Crypto-Js",
-              "link": "https://www.npmjs.com/package/crypto-js"
+              id: 3,
+              name: "Crypto-Js",
+              link: "https://www.npmjs.com/package/crypto-js",
             },
             {
-              "id": 4,
-              "name": "JWT-Decode",
-              "link": "https://www.npmjs.com/package/jwt-decode"
-            }
-          ]
+              id: 4,
+              name: "JWT-Decode",
+              link: "https://www.npmjs.com/package/jwt-decode",
+            },
+          ],
         },
-        "deployments": {
-          "items": [{ "id": 1, "name": "VPS Webtropia", "link": "https://www.webtropia.com/" }]
-        }
+        deployments: {
+          items: [
+            {
+              id: 1,
+              name: "VPS Webtropia",
+              link: "https://www.webtropia.com/",
+            },
+          ],
+        },
       },
-      "images": {
-        "default": [
-          { "id": 1, "url": "/projetos/lpElaine/lpElaine.png", "alt": "alt" }
-        ]
+      images: {
+        default: [
+          { id: 1, url: "/projetos/lpElaine/lpElaine.png", alt: "alt" },
+        ],
       },
-      "resume": {
-        "paragraph": [
+      resume: {
+        paragraph: [
           "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização.",
           "Backend desenvolvido com ExpressJS para armazenar informações de usuários e produtos.",
-          "Habilidades aplicadas na construção da landing page incluem integração com Kiwify para gestão de pagamentos, otimização de SEO para melhorar a visibilidade nos motores de busca, design responsivo com Tailwind CSS, e uso de práticas de marketing digital para conversão de leads."
-        ]
+          "Habilidades aplicadas na construção da landing page incluem integração com Kiwify para gestão de pagamentos, otimização de SEO para melhorar a visibilidade nos motores de busca, design responsivo com Tailwind CSS, e uso de práticas de marketing digital para conversão de leads.",
+        ],
       },
-      "link": "https://www.lojaelaineoliveira.com.br/"
-    }
+      link: "https://www.lojaelaineoliveira.com.br/",
+    },
   ];
   const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
   const [resumoExpandido, setResumoExpandido] = useState<boolean>(false);
@@ -198,21 +204,21 @@ export default function Projetos() {
   }
 
   return (
-    <section className="container-padrao rounded-md relative">
+    <section className="container-padrao relative">
       <div className="flex flex-row justify-center items-center w-1/2">
         <h2 className="text-dark text-center text-6xl dark:text-white">
-          Projetos
+          PROJETOS
         </h2>
         <div className="flex flex-nowrap text-center">
           <span
             onClick={projetoAnterior}
-            className="cursor-pointer active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl"
+            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-8xl"
           >
             chevron_left
           </span>
           <span
             onClick={proximoProjeto}
-            className="cursor-pointer active:transform active:scale-100 hover:transform hover:scale-125 transition-transform ease-in-out duration-300 text-dark dark:text-white text-center material-symbols-rounded text-8xl "
+            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-8xl "
           >
             chevron_right
           </span>
@@ -225,10 +231,7 @@ export default function Projetos() {
             href={projetos[indexProjeto].link}
             className="my-auto"
           >
-            <div
-
-              className="group icone-padrao"
-            >
+            <div className="group icone-padrao">
               <i className="fi fi-sr-address-card groupHover-padrao"></i>
             </div>
           </a>
@@ -239,10 +242,7 @@ export default function Projetos() {
             href={projetos[indexProjeto].link}
             className="my-auto"
           >
-            <div
-
-              className="group icone-padrao"
-            >
+            <div className="group icone-padrao">
               <i className="fi fi-sr-display-code groupHover-padrao"></i>
             </div>
           </a>
@@ -251,9 +251,7 @@ export default function Projetos() {
       </ul>
       <div className="flex flex-col flex-grow ">
         {projetos[indexProjeto].images.default.map((item, index: number) => (
-          <div
-            key={index}
-            className="relative w-full min-h-[50svh]">
+          <div key={index} className="relative w-full min-h-[50svh]">
             <Image
               src={item.url}
               fill
@@ -270,7 +268,8 @@ export default function Projetos() {
             >
               {item}
             </p>
-          ))}</div>
+          ))}
+        </div>
       </div>
     </section>
   );

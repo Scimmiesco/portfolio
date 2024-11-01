@@ -21,9 +21,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${ConcertOne.variable} ${FiraCode.variable} antialiased w-full flex flex-col justify-start min-h-screen dark:bg-dark bg-dark overflow-x-hidden`}
+        className={`${ConcertOne.variable} ${FiraCode.variable} antialiased w-full flex flex-col justify-start min-h-screen bg-[#011114] overflow-x-hidden`}
       >
-        <Menu temaCookie={temaCookie} />
         {Children.map(children, (child) =>
           cloneElement(child as React.ReactElement, { temaCookie })
         )}

@@ -10,12 +10,9 @@
 .linkSeta p::after {
   content: "north_east";
   font-family: "Material Symbols Rounded";
-  position: absolute;
   right: -1.0rem;
-  top: 0;
-  font-size: 1.25rem;
-  opacity: 0;
   transition: opacity 0.15s ease-in;
+  @apply text-destaque absolute top-0 text-lg opacity-0
 }
 
 .linkSeta p:hover::after {

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import "~@flaticon/flaticon-uicons/css/all/all";
 @import "material-symbols";
 
@@ -11,46 +10,82 @@
 }
 
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  @apply transition-colors ease-in-out duration-300;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+.container-padrao {
+  @apply dark:bg-dark bg-white p-4 w-5/6 max-w-screen-desktop h-full rounded-xl;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @apply font-titulo
+  @apply font-titulo;
 }
 
-p, span, small, b, a {
-  @apply font-corpo
-}
-
-html {
-  @apply bg-dark scroll-smooth
-}
-
-.container-padrao {
-  @apply  border-2 border-white dark:bg-dark bg-white p-4 w-full max-w-screen-desktop
+p,
+span,
+small,
+b,
+a {
+  @apply font-corpo text-dark;
 }
 
 .icone-padrao {
-  @apply bg-white dark:border-white hover:bg-dark dark:bg-dark dark:hover:bg-white p-2 transition-colors ease-linear duration-300 border-2 border-dark hover:border-white items-center rounded-full
+  @apply dark:border-white dark:bg-dark dark:hover:bg-white;
+  @apply bg-white hover:bg-dark p-2 items-center rounded-full;
 }
 
-.icone-padrao i, .icone-padrao span {
-  @apply text-dark dark:text-white delay-200 text-3xl m-1 items-center
+.icone-padrao i,
+.icone-padrao span {
+  @apply text-dark dark:text-white text-3xl m-1 items-center;
 }
 
 .groupHover-padrao {
-  @apply group-hover:text-white dark:group-hover:text-dark
+  @apply group-hover:text-white dark:group-hover:text-dark;
 }
 
 .svg path {
-  @apply fill-dark dark:fill-white
+  @apply dark:fill-dark fill-white group-hover:fill-destaque;
+}
+
+.svg g path {
+  @apply dark:fill-dark fill-white group-hover:fill-destaque;
 }
 
 p {
-  @apply text-center dark:text-white text-2xl text-balance
+  @apply text-center dark:text-white text-2xl text-balance;
+}
+
+.containerDark {
+  @apply h-full flex-1 bg-white dark:bg-dark rounded-xl p-2;
+
+  p,
+  h1,
+  h2,
+  .svg path {
+    @apply text-dark dark:text-white dark:fill-white fill-dark;
+  }
+}
+
+.icone_cores {
+  @apply hover:bg-dark bg-white dark:bg-dark rounded-full;
+}
+
+.fi {
+  @apply flex flex-row justify-center items-center text-center
+}
+
+.animacaoClick {
+  @apply active:transform active:scale-100 hover:text-destaque dark:hover:text-destaque hover:transform hover:scale-125 transition-all ease-in-out duration-300;
+
+}
+
+.animacaoClick * {
+  @apply hover:text-destaque dark:hover:text-destaque
 }

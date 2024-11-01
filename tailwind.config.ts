@@ -37,8 +37,9 @@ const config: Config = {
         insted_perfil_light: "url('/area_perfil_light.png')",
       },
       colors: {
-        white: "#e4f1f8",
-        dark: "#0b0116",
+        white: "#FFDFCE",
+        dark: "#0C292F",
+        destaque: "#E4523F",
       },
       boxShadow: {
         "3xl": "inset 0 -150px 25px -110px",

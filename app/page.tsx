@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import Footer from "./src/components/footer/footer";
 import Projetos from "./src/components/projetos/projetos";
@@ -23,7 +23,7 @@ export default function Home() {
   const isMobile = windowWidth <= 768;
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen p-2 tablet:min-w-[768px] tablet:max-w-[75%] mx-auto gap-2">
+    <main className="flex flex-col items-center justify-start min-h-screen p-2 tablet:min-w-[768px] mx-auto gap-2">
       <SobreMim />
       <Projetos />
       <Footer />
