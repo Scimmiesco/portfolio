@@ -35,7 +35,7 @@ export default function SwitchTema({
         !cursor-pointer 
         overflow-hidden 
         group
-        icone_cores
+        animacaoClick
         icone-padrao
         relative 
         w-10 h-10

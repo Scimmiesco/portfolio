@@ -28,6 +28,10 @@ h4 {
   @apply font-titulo;
 }
 
+h4 {
+  @apply font-bold
+}
+
 p,
 span,
 small,
@@ -37,8 +41,7 @@ a {
 }
 
 .icone-padrao {
-  @apply dark:border-white dark:bg-dark dark:hover:bg-white;
-  @apply bg-white hover:bg-dark p-2 items-center rounded-full;
+  @apply p-2 items-center rounded-full;
 }
 
 .icone-padrao i,
@@ -47,15 +50,15 @@ a {
 }
 
 .groupHover-padrao {
-  @apply group-hover:text-white dark:group-hover:text-dark;
+  @apply group-hover:text-destaque dark:group-hover:text-destaque;
 }
 
 .svg path {
-  @apply dark:fill-dark fill-white group-hover:fill-destaque;
+  @apply dark:fill-dark fill-white;
 }
 
 .svg g path {
-  @apply dark:fill-dark fill-white group-hover:fill-destaque;
+  @apply dark:fill-dark fill-white;
 }
 
 p {
@@ -71,10 +74,6 @@ p {
   .svg path {
     @apply text-dark dark:text-white dark:fill-white fill-dark;
   }
-}
-
-.icone_cores {
-  @apply hover:bg-dark bg-white dark:bg-dark rounded-full;
 }
 
 .fi {

@@ -1,4 +1,11 @@
 .modal {
   transition: opacity 0.05s ease-in, width 0.15s ease-in,
     height 0.15s ease-in 0.15s;
+  @apply bg-dark dark:bg-white tablet:bg-white tablet:dark:bg-dark;
+
+  h4,
+  h3,
+  p {
+    @apply text-white dark:text-dark tablet:text-dark tablet:dark:text-white;
+  }
 }

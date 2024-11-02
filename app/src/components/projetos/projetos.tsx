@@ -120,13 +120,17 @@ export default function Projetos() {
     {
       id: 3,
       modalInfo: {
-        title: "Landing Page - Elaine Oliveira",
+        title: "Loja Elaine Oliveira",
         frameworks: {
           items: [
             {
               id: 1,
               name: "Angular 18",
               link: "https://angular.io/",
+            }, {
+              id: 2,
+              name: "NodeJS Express",
+              link: "https://expressjs.com/",
             },
           ],
         },
@@ -205,8 +209,8 @@ export default function Projetos() {
 
   return (
     <section className="container-padrao relative">
-      <div className="flex flex-row justify-center items-center w-1/2">
-        <h2 className="text-dark text-center text-6xl dark:text-white">
+      <div className="flex flex-row justify-start items-center w-full">
+        <h2 className="text-dark text-center text-5xl font-semibold dark:text-white">
           PROJETOS
         </h2>
         <div className="flex flex-nowrap text-center">
@@ -224,14 +228,14 @@ export default function Projetos() {
           </span>
         </div>
       </div>
-      <ul className="flex place-items-end justify-end row-span-1 tablet:col-span-4  col-span-19 items-center tablet:items-center gap-2 my-auto">
+      <ul className="flex tablet:justify-end items-center tablet:items-center gap-2 my-auto">
         <li>
           <a
             target="_blank"
             href={projetos[indexProjeto].link}
             className="my-auto"
           >
-            <div className="group icone-padrao">
+            <div className="group icone-padrao animacaoClick">
               <i className="fi fi-sr-address-card groupHover-padrao"></i>
             </div>
           </a>
@@ -242,7 +246,7 @@ export default function Projetos() {
             href={projetos[indexProjeto].link}
             className="my-auto"
           >
-            <div className="group icone-padrao">
+            <div className="group icone-padrao animacaoClick">
               <i className="fi fi-sr-display-code groupHover-padrao"></i>
             </div>
           </a>
@@ -260,11 +264,11 @@ export default function Projetos() {
             ></Image>
           </div>
         ))}
-        <div className="min-h-60 max-h-60 overflow-y-hidden p-2">
+        <div className="min-h-60 p-2">
           {projetos[indexProjeto].resume.paragraph.map((item, index) => (
             <p
               key={index}
-              className={`text-xl text-pretty p-2 text-dark dark:text-white `}
+              className={`text-xl text-pretty p-2 text-dark dark:text-white font-medium`}
             >
               {item}
             </p>

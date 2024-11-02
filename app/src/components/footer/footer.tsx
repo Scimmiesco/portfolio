@@ -29,8 +29,8 @@ export default function Footer() {
     <section className="container-padrao  flex flex-row text-center items-center justify-between rounded-b-3xl rounded-t-md">
       <a className="linkSeta dark:text-white" href="mailto:p.almeida@live.com ">
         <div className="flex justify-center text-center items-center">
-          <i className="fi fi-br-envelope text-center text-4xl"></i>
-          <p className="text-lg px-1 whitespace-nowrap text-center ">
+          <i className="fi fi-br-envelope text-center text-4xl animacaoClick"></i>
+          <p className="text-lg font-semibold px-1 whitespace-nowrap text-center ">
             P.ALMEIDA@LIVE.COM
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function Footer() {
                 className="flex justify-center animacaoClick"
               >
                 <i
-                  className={`${item.classe} text-4xl text-dark dark:text-white`}
+                  className={`${item.classe} text-4xl text-dark dark:text-white `}
                 ></i>
               </a>
             </li>
