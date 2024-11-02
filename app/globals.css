@@ -18,7 +18,7 @@ html {
 }
 
 .container-padrao {
-  @apply dark:bg-dark bg-white p-4 w-5/6 max-w-screen-desktop h-full rounded-xl;
+  @apply dark:bg-dark bg-white p-4 max-w-screen-desktop h-full rounded-xl w-full;
 }
 
 h1,

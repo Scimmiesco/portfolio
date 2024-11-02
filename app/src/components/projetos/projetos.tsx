@@ -209,7 +209,7 @@ export default function Projetos() {
 
   return (
     <section className="container-padrao relative">
-      <div className="flex flex-row justify-start items-center w-full">
+      <div className="flex flex-row justify-start items-center">
         <h2 className="text-dark text-center text-5xl font-semibold dark:text-white">
           PROJETOS
         </h2>
