@@ -9,7 +9,7 @@ export default function SobreMim({ temaCookie }: any) {
     setTema(isChecked ? "light" : "dark");
   };
   return (
-    <section className=" relative
+    <section className="container-padrao relative
     grid grid-cols-1 grid-rows-2 tablet:grid-row-1 tablet:grid-cols-2 w-full
     text-center items-center gap-2">
       <div className="flex flex-col justify-center tablet:gap-2 gap-8 items-center containerDark">
