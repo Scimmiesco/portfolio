@@ -173,22 +173,75 @@ export default function Projetos() {
           "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização.",
           "Backend desenvolvido com ExpressJS para armazenar informações de usuários e produtos.",
           "Habilidades aplicadas na construção da landing page incluem integração com Kiwify para gestão de pagamentos, otimização de SEO para melhorar a visibilidade nos motores de busca, design responsivo com Tailwind CSS, e uso de práticas de marketing digital para conversão de leads.",
+          "Foi realizado além da parte da LP a tela de login, com recuperação de senha (com envio de e-mail). Acesso de administrador e cliente. E parte de adição, exclusão e edição de registros. "
         ],
+      },
+      link: "https://www.lojaelaineoliveira.com.br/",
+    }, {
+      id: 4,
+      modalInfo: {
+        title: "Souza Fernandes Advogados",
+        frameworks: {
+          items: [
+            {
+              id: 1,
+              name: "Angular 18",
+              link: "https://angular.io/",
+            }, {
+              id: 2,
+              name: "NodeJS Express",
+              link: "https://expressjs.com/",
+            },
+          ],
+        },
+        libraries: {
+          items: [
+            {
+              id: 1,
+              name: "Angular Material",
+              link: "https://v15.material.angular.io/",
+            },
+            {
+              id: 3,
+              name: "Crypto-Js",
+              link: "https://www.npmjs.com/package/crypto-js",
+            },
+            {
+              id: 4,
+              name: "JWT-Decode",
+              link: "https://www.npmjs.com/package/jwt-decode",
+            },
+          ],
+        },
+        deployments: {
+          items: [
+            {
+              id: 1,
+              name: "VPS Webtropia",
+              link: "https://www.webtropia.com/",
+            },
+          ],
+        },
+      },
+      images: {
+        default: [
+          { id: 1, url: "/projetos/souzaFernandes/souzaFernandes.png", alt: "alt" },
+        ],
+      },
+      resume: {
+        paragraph: [
+          "Desenvolvi um site profissional para o escritório de advocacia Souza Fernandes utilizando Angular 18, focado em uma arquitetura moderna e componentizada.",
+          "A interface do site foi projetada com design responsivo utilizando Tailwind CSS, garantindo uma experiência visual atraente e funcional em todos os dispositivos.",
+          "O projeto incluiu a implementação de uma seção de artigos em colaboração com um colega, integrada a uma Web API em PHP com segurança HTTPS, permitindo a publicação e atualização dinâmica de conteúdo pelo cliente.",
+          "Além disso, foram implementadas funcionalidades de login com recuperação de senha via e-mail, sistema de acesso diferenciado para advogados e clientes, e um painel administrativo para gerenciamento de conteúdos.",
+          "Para garantir a visibilidade do site nos motores de busca, foram aplicadas técnicas de otimização SEO, complementadas por práticas de marketing digital para atração e retenção de clientes."
+        ]
       },
       link: "https://www.lojaelaineoliveira.com.br/",
     },
   ];
   const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
   const [resumoExpandido, setResumoExpandido] = useState<boolean>(false);
-
-  const handleResumoExpandido = () => {
-    setResumoExpandido(!resumoExpandido);
-  };
-
-  const handleDarkModeToggle = (isChecked: boolean) => {
-    setProjetoClaro(isChecked);
-  };
-
   const [indexProjeto, setIndexProjeto] = useState<number>(0);
 
   function proximoProjeto() {
