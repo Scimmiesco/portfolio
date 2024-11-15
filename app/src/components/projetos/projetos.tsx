@@ -304,15 +304,15 @@ export default function Projetos() {
         <InfoProjetos projeto={projetos[indexProjeto]} />
       </ul>
       <div className="flex flex-col flex-grow">
-        <div className="flex md:flex-row flex-col justify-center flex-wrap md:gap-8">
+        <div className="flex tablet:flex-row flex-col justify-center flex-wrap tablet:gap-8 gap-4">
           {projetos[indexProjeto].images.map((item, index: number) => (
             <div key={index}
-              className={"relative md:min-h-[50svh] min-h-[33vh] w-full" + (index == 1 ? ' md:w-1/5' : ' md:w-1/2')}>
+              className={"relative tablet:min-h-[50svh] min-h-[33vh] w-full" + (index == 1 ? ' tablet:w-1/5' : ' tablet:w-1/2')}>
               <Image
                 src={item.url}
                 fill
                 alt={item.alt}
-                className="object-contain md:object-left object-center"
+                className="object-contain tablet:object-left object-center"
               ></Image>
             </div>
           ))}
