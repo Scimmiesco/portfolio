@@ -34,7 +34,7 @@ interface Project {
     libraries: { items: Library[] };
     deployments?: { items: deployment[] };
   };
-  images: { default: Image[]; dark?: Image[] };
+  images: Image[];
   resume: { paragraph: string[] };
   link: string
 }

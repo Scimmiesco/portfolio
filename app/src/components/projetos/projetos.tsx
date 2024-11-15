@@ -43,11 +43,11 @@ export default function Projetos() {
           items: [{ id: 1, name: "Vercel", link: "https://vercel.com/" }],
         },
       },
-      images: {
-        default: [
-          { id: 1, url: "/projetos/areaInsted/areaInsted.png", alt: "alt" },
+      images:
+        [
+          { id: 1, url: "/projetos/areaInsted/desktop_ava.png", alt: "alt" },
+          { id: 2, url: "/projetos/areaInsted/mobile_ava.png", alt: "alt" },
         ],
-      },
       resume: {
         paragraph: [
           "No Projeto Integrador da faculdade Insted, o desenvolvimento do Ambiente Virtual de Aprendizagem (AVA) culmina com foco no frontend, implementado em Angular com TypeScript. Essa escolha se deve à robustez, modularidade e manutenção facilitada do Angular, além da segurança e eficiência da tipagem estática do TypeScript. ",
@@ -104,11 +104,10 @@ export default function Projetos() {
           ],
         },
       },
-      images: {
-        default: [
-          { id: 1, url: "/projetos/areaInsted/areaInsted.png", alt: "alt" },
-        ],
-      },
+      images: [
+        { id: 1, url: "/projetos/areaInsted/desktop_ava.png", alt: "alt" },
+        { id: 2, url: "/projetos/areaInsted/mobile_ava.png", alt: "alt" },
+      ],
       resume: {
         paragraph: [
           "O backend foi implementado como uma Web API integrada ao SQL Server, utilizando solicitações HTTP para fornecer dados dinâmicos ao frontend, garantindo gestão eficiente, segurança e integridade das informações.",
@@ -163,11 +162,10 @@ export default function Projetos() {
           ],
         },
       },
-      images: {
-        default: [
-          { id: 1, url: "/projetos/lpElaine/lpElaine.png", alt: "alt" },
-        ],
-      },
+      images: [
+        { id: 1, url: "/projetos/lpElaine/desktop_elaine.png", alt: "alt" },
+        { id: 1, url: "/projetos/lpElaine/mobile_elaine.png", alt: "alt" },
+      ],
       resume: {
         paragraph: [
           "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização.",
@@ -223,11 +221,10 @@ export default function Projetos() {
           ],
         },
       },
-      images: {
-        default: [
-          { id: 1, url: "/projetos/souzaFernandes/souzaFernandes.png", alt: "alt" },
-        ],
-      },
+      images: [
+        { id: 1, url: "/projetos/souzaFernandes/desktop_souza.png", alt: "alt" },
+        { id: 1, url: "/projetos/souzaFernandes/mobile_souza.png", alt: "alt" },
+      ],
       resume: {
         paragraph: [
           "Desenvolvi um site profissional para o escritório de advocacia Souza Fernandes utilizando Angular 18, focado em uma arquitetura moderna e componentizada.",
@@ -269,19 +266,19 @@ export default function Projetos() {
         <div className="flex flex-nowrap text-center">
           <span
             onClick={projetoAnterior}
-            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-8xl"
+            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-7xl md:text-8xl"
           >
             chevron_left
           </span>
           <span
             onClick={proximoProjeto}
-            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-8xl "
+            className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-7xl md:text-8xl "
           >
             chevron_right
           </span>
         </div>
       </div>
-      <ul className="flex tablet:justify-end items-center tablet:items-center gap-2 my-auto">
+      <ul className="flex tablet:justify-end justify-center tablet:items-center gap-2 my-auto">
         <li>
           <a
             target="_blank"
@@ -306,17 +303,20 @@ export default function Projetos() {
         </li>
         <InfoProjetos projeto={projetos[indexProjeto]} />
       </ul>
-      <div className="flex flex-col flex-grow ">
-        {projetos[indexProjeto].images.default.map((item, index: number) => (
-          <div key={index} className="relative w-full min-h-[50svh]">
-            <Image
-              src={item.url}
-              fill
-              alt={item.alt}
-              className="object-contain"
-            ></Image>
-          </div>
-        ))}
+      <div className="flex flex-col flex-grow">
+        <div className="flex md:flex-row flex-col justify-center flex-wrap md:gap-8">
+          {projetos[indexProjeto].images.map((item, index: number) => (
+            <div key={index}
+              className={"relative md:min-h-[50svh] min-h-[33vh] w-full" + (index == 1 ? ' md:w-1/5' : ' md:w-1/2')}>
+              <Image
+                src={item.url}
+                fill
+                alt={item.alt}
+                className="object-contain md:object-left object-center"
+              ></Image>
+            </div>
+          ))}
+        </div>
         <div className="min-h-60 p-2">
           {projetos[indexProjeto].resume.paragraph.map((item, index) => (
             <p
