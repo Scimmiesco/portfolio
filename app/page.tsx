@@ -23,7 +23,7 @@ export default function Home() {
   const isMobile = windowWidth <= 768;
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen p-2 tablet:min-w-[768px] md:mx-auto gap-2">
+    <main className="flex flex-col items-center justify-start min-h-screen tablet:p-2 tablet:min-w-[768px] tablet:mx-auto gap-2">
       <SobreMim />
       <Projetos />
       <Footer />

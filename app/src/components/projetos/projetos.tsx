@@ -237,8 +237,7 @@ export default function Projetos() {
       link: "https://www.lojaelaineoliveira.com.br/",
     },
   ];
-  const [projetoClaro, setProjetoClaro] = useState<boolean>(true);
-  const [resumoExpandido, setResumoExpandido] = useState<boolean>(false);
+
   const [indexProjeto, setIndexProjeto] = useState<number>(0);
 
   function proximoProjeto() {
@@ -259,7 +258,7 @@ export default function Projetos() {
 
   return (
     <section className="container-padrao relative">
-      <div className="flex flex-row justify-start items-center">
+      <div className="flex flex-row tablet:justify-start justify-center items-center">
         <h2 className="text-dark text-center text-5xl font-semibold dark:text-white">
           PROJETOS
         </h2>
