@@ -1,11 +1,24 @@
 .modal {
-  transition: opacity 0.05s ease-in, width 0.15s ease-in,
-    height 0.15s ease-in 0.15s;
-  @apply bg-dark dark:bg-white tablet:bg-white tablet:dark:bg-dark;
+  @apply bg-white dark:bg-dark;
 
   h4,
   h3,
   p {
-    @apply text-white dark:text-dark tablet:text-dark tablet:dark:text-white;
+    @apply dark:text-white text-dark;
+  }
+  animation: modalAbrir 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalAbrir {
+  0% {
+    transform: translateY(-10%) scaleY(1.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
   }
 }

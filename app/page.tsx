@@ -6,21 +6,23 @@ import SobreMim from "./src/components/sobreMim/sobre_mim";
 import { FiraCode } from "@/app/ui/fonts";
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      const width = window.innerWidth;
+      setWindowWidth(width);
+      setIsMobile(width <= 768);
     };
 
+    handleResize(); // Set initial width
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const isMobile = windowWidth <= 768;
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen tablet:p-2 p-1 tablet:min-w-[768px] tablet:mx-auto gap-2">

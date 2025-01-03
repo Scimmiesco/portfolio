@@ -43,11 +43,10 @@ export default function Projetos() {
           items: [{ id: 1, name: "Vercel", link: "https://vercel.com/" }],
         },
       },
-      images:
-        [
-          { id: 1, url: "/projetos/areaInsted/desktop_ava.png", alt: "alt" },
-          { id: 2, url: "/projetos/areaInsted/mobile_ava.png", alt: "alt" },
-        ],
+      images: [
+        { id: 1, url: "/projetos/areaInsted/desktop_ava.png", alt: "alt" },
+        { id: 2, url: "/projetos/areaInsted/mobile_ava.png", alt: "alt" },
+      ],
       resume: {
         paragraph: [
           "No Projeto Integrador da faculdade Insted, o desenvolvimento do Ambiente Virtual de Aprendizagem (AVA) culmina com foco no frontend, implementado em Angular com TypeScript. Essa escolha se deve à robustez, modularidade e manutenção facilitada do Angular, além da segurança e eficiência da tipagem estática do TypeScript. ",
@@ -119,14 +118,15 @@ export default function Projetos() {
     {
       id: 3,
       modalInfo: {
-        title: "Loja Elaine Oliveira",
+        title: "Elaine Oliveira",
         frameworks: {
           items: [
             {
               id: 1,
               name: "Angular 18",
               link: "https://angular.io/",
-            }, {
+            },
+            {
               id: 2,
               name: "NodeJS Express",
               link: "https://expressjs.com/",
@@ -171,24 +171,70 @@ export default function Projetos() {
           "Projeto implementado em VPS própria, utilizando containers e a nova estrutura do Angular 18 com foco em componentização.",
           "Backend desenvolvido com ExpressJS para armazenar informações de usuários e produtos.",
           "Habilidades aplicadas na construção da landing page incluem integração com Kiwify para gestão de pagamentos, otimização de SEO para melhorar a visibilidade nos motores de busca, design responsivo com Tailwind CSS, e uso de práticas de marketing digital para conversão de leads.",
-          "Foi realizado além da parte da LP a tela de login, com recuperação de senha (com envio de e-mail). Acesso de administrador e cliente. E parte de adição, exclusão e edição de registros. "
+          "Foi realizado além da parte da LP a tela de login, com recuperação de senha (com envio de e-mail). Acesso de administrador e cliente. E parte de adição, exclusão e edição de registros. ",
         ],
       },
       link: "https://www.lojaelaineoliveira.com.br/",
-    }, {
+    },
+    {
       id: 4,
       modalInfo: {
-        title: "Souza Fernandes Advogados",
+        title: "Santos Advocacia",
         frameworks: {
           items: [
             {
               id: 1,
               name: "Angular 18",
               link: "https://angular.io/",
-            }, {
-              id: 2,
-              name: "NodeJS Express",
-              link: "https://expressjs.com/",
+            },
+          ],
+        },
+        libraries: {
+          items: [
+            {
+              id: 1,
+              name: "Angular Material",
+              link: "https://v18.material.angular.io/",
+            },
+          ],
+        },
+        deployments: {
+          items: [
+            {
+              id: 1,
+              name: "Vercel",
+              link: "https://www.vercel.com/",
+            },
+          ],
+        },
+      },
+      images: [
+        {
+          id: 1,
+          url: "/projetos/souzaFernandes/desktop_souza.png",
+          alt: "alt",
+        },
+        { id: 1, url: "/projetos/souzaFernandes/mobile_souza.png", alt: "alt" },
+      ],
+      resume: {
+        paragraph: [
+          "Desenvolvi um site profissional para o escritório de advocacia Santos Advocacia, utilizando Angular 18, focado em uma arquitetura moderna e componentizada.",
+          "A interface do site foi projetada com design responsivo utilizando Tailwind CSS, garantindo uma experiência visual atraente e funcional em todos os dispositivos.",
+          "Para garantir a visibilidade do site nos motores de busca, foram aplicadas técnicas de otimização SEO, complementadas por práticas de marketing digital para atração e retenção de clientes.",
+        ],
+      },
+      link: "https://www.lojaelaineoliveira.com.br/",
+    },
+    {
+      id: 4,
+      modalInfo: {
+        title: "FotonSíntese",
+        frameworks: {
+          items: [
+            {
+              id: 1,
+              name: "Angular 19",
+              link: "https://angular.io/",
             },
           ],
         },
@@ -199,40 +245,33 @@ export default function Projetos() {
               name: "Angular Material",
               link: "https://v15.material.angular.io/",
             },
-            {
-              id: 3,
-              name: "Crypto-Js",
-              link: "https://www.npmjs.com/package/crypto-js",
-            },
-            {
-              id: 4,
-              name: "JWT-Decode",
-              link: "https://www.npmjs.com/package/jwt-decode",
-            },
           ],
         },
         deployments: {
           items: [
             {
               id: 1,
-              name: "VPS Webtropia",
-              link: "https://www.webtropia.com/",
+              name: "Vercel",
+              link: "https://www.vercel.com/",
             },
           ],
         },
       },
       images: [
-        { id: 1, url: "/projetos/souzaFernandes/desktop_souza.png", alt: "alt" },
+        {
+          id: 1,
+          url: "/projetos/souzaFernandes/desktop_souza.png",
+          alt: "alt",
+        },
         { id: 1, url: "/projetos/souzaFernandes/mobile_souza.png", alt: "alt" },
       ],
       resume: {
         paragraph: [
-          "Desenvolvi um site profissional para o escritório de advocacia Souza Fernandes utilizando Angular 18, focado em uma arquitetura moderna e componentizada.",
-          "A interface do site foi projetada com design responsivo utilizando Tailwind CSS, garantindo uma experiência visual atraente e funcional em todos os dispositivos.",
-          "O projeto incluiu a implementação de uma seção de artigos em colaboração com um colega, integrada a uma Web API em PHP com segurança HTTPS, permitindo a publicação e atualização dinâmica de conteúdo pelo cliente.",
-          "Além disso, foram implementadas funcionalidades de login com recuperação de senha via e-mail, sistema de acesso diferenciado para advogados e clientes, e um painel administrativo para gerenciamento de conteúdos.",
-          "Para garantir a visibilidade do site nos motores de busca, foram aplicadas técnicas de otimização SEO, complementadas por práticas de marketing digital para atração e retenção de clientes."
-        ]
+          "Desenvolvi a presença digital da FotonSíntese, uma empresa de energia solar que combina inovação e sustentabilidade, com uma identidade visual moderna e cativante.",
+          "A landing page foi concebida para refletir a visão da empresa: democratizar o acesso à energia renovável de forma confiável e acessível. O design da interface priorizou simplicidade e elegância, destacando a modernidade e o dinamismo que representam a FotonSíntese.Além da estrutura do site, projetei a logomarca, integrando o nome da empresa a um estilo minimalista e contemporâneo. As cores vibrantes foram escolhidas estrategicamente para transmitir energia, positividade e confiança, alinhando-se aos valores da marca.",
+          "A interface do site foi projetada com design responsivo utilizando Tailwind CSS.",
+          "Para garantir a visibilidade do site nos motores de busca, foram aplicadas técnicas de otimização SEO, complementadas por práticas de marketing digital para atração e retenção de clientes.",
+        ],
       },
       link: "https://www.lojaelaineoliveira.com.br/",
     },
@@ -305,8 +344,13 @@ export default function Projetos() {
       <div className="flex flex-col flex-grow">
         <div className="flex tablet:flex-row flex-col justify-center flex-wrap tablet:gap-8 gap-4">
           {projetos[indexProjeto].images.map((item, index: number) => (
-            <div key={index}
-              className={"relative tablet:min-h-[50svh] min-h-[33vh] w-full" + (index == 1 ? ' tablet:w-1/5' : ' tablet:w-1/2')}>
+            <div
+              key={index}
+              className={
+                "relative tablet:min-h-[50svh] min-h-[33vh] w-full" +
+                (index == 1 ? " tablet:w-1/5" : " tablet:w-1/2")
+              }
+            >
               <Image
                 src={item.url}
                 fill

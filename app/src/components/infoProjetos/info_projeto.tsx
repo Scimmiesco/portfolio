@@ -15,23 +15,25 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
     <section className="relative">
       <div
         onClick={toggleModalAberto}
-        className="cursor-pointer icone-padrao animacaoClick group relative"
+        className="cursor-pointer icone-padrao group relative animacaoClick"
       >
         <i className="fi fi-sr-info groupHover-padrao"></i>
       </div>
       {modalFechado ? null : (
         <div
           id="modal"
-          className={`${modalFechado
-            ? "opacity-0 max-h-0 w-0 transition-none"
-            : "opacity-1 min-w-[225px] min-h-fit transition-opacity duration-150 linear"
-            } modal absolute px-1 py-1-top-0 left-20 rounded-xl z-50 `}
+          className={`${
+            modalFechado
+              ? "opacity-0 max-h-0 h-0 w-0"
+              : "opacity-1 min-w-72 min-h-fit duration-150 linear"
+          } modal absolute px-1 py-1 top-12 -left-56 xl:-left-full rounded-xl z-50  border-2 border-solid border-dark dark:border-white transition-all duration-300`}
         >
           <div>
             <div className="">
               <h3
-                className={`${modalFechado ? "opacity-0" : "opacity-1"
-                  }  text-center text-3xl`}
+                className={`${
+                  modalFechado ? "opacity-0" : "opacity-1"
+                }  text-center text-3xl`}
               >
                 {projeto.modalInfo.title}
               </h3>
