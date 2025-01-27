@@ -10,7 +10,7 @@ export default function Projetos() {
     {
       id: 1,
       modalInfo: {
-        title: "Área Insted FRONTEND",
+        title: "Área Insted",
         frameworks: {
           items: [{ id: 1, name: "Angular 15", link: "https://angular.io/" }],
         },
@@ -58,7 +58,7 @@ export default function Projetos() {
     {
       id: 2,
       modalInfo: {
-        title: "Área Insted BACKEND",
+        title: "Área Insted",
         frameworks: {
           items: [
             { id: 1, name: ".NET Framework 6.0", link: "https://angular.io/" },
@@ -301,7 +301,7 @@ export default function Projetos() {
         <h2 className="text-dark text-center text-5xl font-semibold dark:text-white">
           PROJETOS
         </h2>
-        <div className="flex flex-nowrap text-center">
+        <div className="flex flex-nowrap text-center relative z-50">
           <span
             onClick={projetoAnterior}
             className="cursor-pointer animacaoClick text-dark dark:text-white text-center material-symbols-rounded text-7xl md:text-8xl"
@@ -315,6 +315,7 @@ export default function Projetos() {
             chevron_right
           </span>
         </div>
+        <h1 className="absolute text-6xl text-destaque w-full text-center">{projetos[indexProjeto].modalInfo.title}</h1>
       </div>
       <ul className="flex tablet:justify-end justify-center tablet:items-center gap-2 my-auto">
         <li>
@@ -344,6 +345,7 @@ export default function Projetos() {
       <div className="flex flex-col flex-grow">
         <div className="flex tablet:flex-row flex-col justify-center flex-wrap tablet:gap-8 gap-4">
           {projetos[indexProjeto].images.map((item, index: number) => (
+
             <div
               key={index}
               className={
