@@ -2,12 +2,12 @@
   display: block;
 }
 
-.linkSeta p {
+.linkSeta p, .linkSeta h3 {
   display: inline-block;
   position: relative;
 }
 
-.linkSeta p::after {
+.linkSeta p::after, .linkSeta h3::after  {
   content: "north_east";
   font-family: "Material Symbols Rounded";
   right: -1.0rem;
@@ -15,6 +15,6 @@
   @apply text-destaque absolute top-0 text-lg opacity-0
 }
 
-.linkSeta p:hover::after {
+.linkSeta p:hover::after, .linkSeta h3:hover::after {
   opacity: 1;
 }
