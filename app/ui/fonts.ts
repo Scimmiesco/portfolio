@@ -1,9 +1,10 @@
-import { Concert_One, Fira_Code } from "next/font/google";
+import { Fira_Code, Alumni_Sans } from "next/font/google";
 
-export const ConcertOne = Concert_One({
-  weight: ["400"],
+export const AlumniSans = Alumni_Sans({
+  weight: ["600", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-Concert-One",
+  variable: "--font-Alumni-Sans",
+  preload: true
 });
 export const FiraCode = Fira_Code({
   weight: ["500"],

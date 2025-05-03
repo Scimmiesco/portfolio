@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen tablet:p-2 p-1 tablet:min-w-[768px] tablet:mx-auto gap-2">
+    <main className="flex flex-col items-center justify-start min-h-screen  p-2 tablet:min-w-[768px] tablet:mx-auto gap-8 w-full">
       <SobreMim />
       <Projetos />
       <Footer />

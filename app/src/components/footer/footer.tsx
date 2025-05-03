@@ -26,17 +26,15 @@ export default function Footer() {
   };
 
   return (
-    <section className="container-padrao  flex flex-row text-center items-center justify-between rounded-b-3xl rounded-t-md">
+    <section className="container-padrao  flex flex-row text-center items-center justify-center tablet:justify-between rounded-b-3xl rounded-t-md
+    border-[6px] border-solid border-dark flex-wrap dark:border-white">
       <a className="linkSeta dark:text-white" href="mailto:p.almeida@live.com ">
-        <div className="flex justify-center text-center items-center">
-          <i className="fi fi-br-envelope text-center text-4xl animacaoClick"></i>
-          <p className="text-lg font-semibold px-1 whitespace-nowrap text-center ">
+          <h3 className="px-1 whitespace-nowrap text-center">
             P.ALMEIDA@LIVE.COM
-          </p>
-        </div>
+          </h3>
       </a>
       <nav>
-        <ul className="flex flex-row gap-4">
+        <ul className="flex flex-row gap-4 flex-wrap">
           {icones.redesSociais.map((item) => (
             <li key={item.id}>
               <a
@@ -45,9 +43,7 @@ export default function Footer() {
                 title={`Ícone com link para o site do ${item.nome}`}
                 className="flex justify-center animacaoClick"
               >
-                <i
-                  className={`${item.classe} text-4xl text-dark dark:text-white `}
-                ></i>
+                <h3 className="">{item.nome}</h3>
               </a>
             </li>
           ))}

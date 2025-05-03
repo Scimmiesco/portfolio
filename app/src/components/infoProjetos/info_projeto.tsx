@@ -1,50 +1,27 @@
-import { useEffect, useState } from "react";
 import "./info_projeto.css";
 import "../../../styles/tagAEffect.css";
 import "../../../interfaces/IProjetos";
 import { FiraCode } from "@/app/ui/fonts";
 
 export default function InfoProjetos({ projeto }: { projeto: Project }) {
-  const [modalFechado, setModalFechado] = useState<boolean>(true);
-
-  const toggleModalAberto = () => {
-    setModalFechado(!modalFechado);
-  };
 
   return (
-    <section className="relative">
-      <div
-        onClick={toggleModalAberto}
-        className="cursor-pointer icone-padrao group relative animacaoClick"
-      >
-        <i className="fi fi-sr-info groupHover-padrao"></i>
-      </div>
-      {modalFechado ? null : (
+    <section className="relative text-center">
+      <h2 className="hidden xl:block">
+        INFO
+      </h2>
         <div
           id="modal"
-          className={`${
-            modalFechado
-              ? "opacity-0 max-h-0 h-0 w-0"
-              : "opacity-1 min-w-72 min-h-fit duration-150 linear"
-          } modal absolute px-1 py-1 top-12 -left-56 xl:-left-full rounded-xl z-50  border-2 border-solid border-dark dark:border-white transition-all duration-300`}
+          className={`
+
+           px-1 py-1 top-12 -left-56 xl:-left-full rounded-xl z-50 transition-all duration-300`}
         >
           <div>
-            <div className="">
-              <h3
-                className={`${
-                  modalFechado ? "opacity-0" : "opacity-1"
-                }  text-center text-3xl`}
-              >
-                {projeto.modalInfo.title}
-              </h3>
-            </div>
             <nav
-              id="navModal"
-              className={`nav ${modalFechado ? "opacity-0" : "opacity-1"}`}
             >
-              <ul>
-                <li>
-                  <h4 className="text-2xl py-1 ">Framework</h4>
+              <ul className="flex flex-row justify-around flex-wrap desktop:flex-col">
+                <li className="">
+                  <h3 className="py-1 ">Framework</h3>
                   {projeto.modalInfo.frameworks.items.map((item, index) => (
                     <li key={index} className={FiraCode.className}>
                       <a className="linkSeta" href={item.link} target="_blank">
@@ -56,7 +33,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                   ))}
                 </li>
                 <li>
-                  <h4 className="text-2xl py-1">Bibliotecas</h4>
+                  <h3 className="py-1">Bibliotecas</h3>
                   {projeto.modalInfo.libraries.items.map((item, index) => (
                     <li key={index} className={FiraCode.className}>
                       <a className="linkSeta" href={item.link} target="_blank">
@@ -69,7 +46,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
                 </li>
                 {projeto.modalInfo.deployments != null && (
                   <li>
-                    <h4 className="text-2xl py-1">Implantação</h4>
+                    <h3 className="py-1">Implantação</h3>
                     {projeto.modalInfo.deployments?.items.map((item, index) => (
                       <li key={index} className={FiraCode.className}>
                         <a
@@ -89,7 +66,7 @@ export default function InfoProjetos({ projeto }: { projeto: Project }) {
             </nav>
           </div>
         </div>
-      )}
+
     </section>
   );
 }

@@ -18,16 +18,21 @@ html {
 }
 
 .container-padrao {
-  @apply dark:bg-dark bg-white p-4 max-w-screen-desktop h-full rounded-xl w-full;
+  @apply dark:bg-dark bg-white p-4 h-full rounded-sm w-full ;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  @apply font-titulo;
+h1, h2, h3, h4, h5, h6 {
+  @apply font-black font-titulo text-dark dark:text-white pb-2;
 }
-
+h1{
+  @apply text-6xl;
+}
+h2{
+  @apply text-5xl
+}
+h3{
+  @apply text-4xl;
+}
 h4 {
   @apply font-bold
 }
@@ -62,11 +67,11 @@ a {
 }
 
 p {
-  @apply text-center dark:text-white text-2xl text-balance;
+  @apply text-center dark:text-white text-2xl text-balance font-semibold;
 }
 
 .containerDark {
-  @apply h-full flex-1 bg-white dark:bg-dark rounded-xl p-2;
+  @apply h-full flex-1 bg-white dark:bg-dark  border-dark dark:border-white border-solid border-[6px] rounded-sm p-2 ;
 
   p,
   h1,
@@ -87,4 +92,8 @@ p {
 
 .animacaoClick * {
   @apply hover:text-destaque dark:hover:text-destaque
+}
+
+.tituloNaBorda {
+  @apply bg-white dark:bg-dark  px-8  absolute text-nowrap top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }

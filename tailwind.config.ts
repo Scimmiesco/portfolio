@@ -24,7 +24,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        titulo: ["var(--font-Concert-One)"],
+        titulo: ["var(--font-Alumni-Sans)"],
         corpo: ["var(--font-Fira-Code)"],
       },
 

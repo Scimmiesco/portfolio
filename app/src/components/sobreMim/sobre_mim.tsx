@@ -9,14 +9,19 @@ export default function SobreMim({ temaCookie }: any) {
     setTema(isChecked ? "light" : "dark");
   };
   return (
-    <section className="container-padrao relative
+    <section className="container-padrao relative z-50 overflow-y-hidden
     grid grid-cols-1 grid-rows-2 tablet:grid-row-1 tablet:grid-cols-2 w-full
-    text-center items-center gap-2">
-      <div className="flex flex-col justify-center tablet:gap-2 gap-8 items-center containerDark">
+    text-center items-center gap-16">
+      <div className="flex flex-col justify-center
+      tablet:gap-2 gap-8 items-center containerDark
+      relative
+      !pt-8
+      !pb-4
+      " >
         <SVG_iconeEu />
-        <h2 className="text-5xl font-semibold tablet:text-4xl">
-          OLÁ, SOU O PEDRO
-        </h2>
+        <h1 className="tituloNaBorda">
+          PEDRO ALMEIDA
+        </h1>
         <div className="absolute top-0 left-0">
           <SwitchTema
             onToggle={handleDarkModeToggle}
@@ -25,10 +30,13 @@ export default function SobreMim({ temaCookie }: any) {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-center containerDark font-semibold">
+      <div className="relative flex flex-col justify-center containerDark !pt-8 !pb-4">
         <p>Desenvolvedor Frontend e UX/UI Designer.</p>
         <p>Combinado código e arte, lógica e estética.</p>
         <p>Transformando ideias abstratas em realidades tangíveis.</p>
+        <h1 className="tituloNaBorda ">
+          SOBRE MIM
+        </h1>
       </div>
     </section>
   );

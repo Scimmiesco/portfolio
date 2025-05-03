@@ -12,6 +12,6 @@
 
 .resumoExpandido{
 transition: all;
-animation-duration: 0.3 s;
+animation-duration: 0.3s;
 animation-timing-function: ease-in-out;
 }
