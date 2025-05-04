@@ -379,7 +379,7 @@ export default function Projetos() {
                     {projetos[indexProjeto].resume.paragraph.map((item, index) => (
                         <p
                             key={index}
-                            className={`text-xl text-pretty p-2 text-dark dark:text-white font-medium`}
+                            className={`text-xl text-pretty p-2 text-dark dark:text-white`}
                         >
                             {item}
                         </p>
